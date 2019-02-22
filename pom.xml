@@ -7,11 +7,11 @@
   <parent>
     <groupId>org.luvx</groupId>
     <artifactId>sample_luvx_parent</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.1-SNAPSHOT</version>
   </parent>
 
   <artifactId>LeetCode_Coding</artifactId>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
 
   <dependencies>
     <dependency>
