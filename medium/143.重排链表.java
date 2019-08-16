@@ -39,11 +39,9 @@ class Solution {
             head.next = temp;
             head = head.next;
             if (temp == fast) {
-                temp = slowNext;
-                slow = temp;
+                slow = temp = slowNext;
             } else {
-                temp = fastNext;
-                fast = temp;
+                fast = temp = fastNext;
             }
         }
     }
