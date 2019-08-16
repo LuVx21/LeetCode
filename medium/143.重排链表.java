@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=143 lang=java
  *
- * [143] ÖØÅÅÁ´±í
+ * [143] é‡æ’é“¾è¡¨
  */
 /**
  * Definition for singly-linked list.
@@ -48,7 +48,7 @@ class Solution {
         }
     }
 
-    // ·´×ªÁ´±í:²Î¼û206Ìâ
+    // åè½¬é“¾è¡¨:å‚è§206é¢˜
     private ListNode reverse(ListNode head) {
         if (head == null || head.next == null) {
             return head;
