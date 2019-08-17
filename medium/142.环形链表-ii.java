@@ -15,6 +15,25 @@
  * }
  */
 public class Solution {
+    public ListNode detectCycle(ListNode head) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+        ListNode current = head, pre = null;
+        while (current != null) {
+            ListNode pre1 = head;
+            while (pre1 != current) {
+                if (pre1.next == current && pre1 != pre) {
+                    return current;
+                }
+                pre1 = pre1.next;
+            }
+            pre = current;
+            current = current.next;
+        }
+        return null;
+    }
+
     public ListNode detectCycle1(ListNode head) {
         if (head == null || head.next == null) {
             return null;
