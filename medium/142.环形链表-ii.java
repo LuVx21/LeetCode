@@ -21,12 +21,16 @@ public class Solution {
         }
         ListNode current = head, pre = null;
         while (current != null) {
-            ListNode pre1 = head;
-            while (pre1 != current) {
-                if (pre1.next == current && pre1 != pre) {
-                    return current;
+            ListNode pre1 = null, current1 = head;
+            while (true) {
+                if (current1 == current) {
+                    if (pre1 != pre) {
+                        return current;
+                    }
+                    break;
                 }
-                pre1 = pre1.next;
+                pre1 = current1;
+                current1 = current1.next;
             }
             pre = current;
             current = current.next;
