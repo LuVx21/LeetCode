@@ -4,6 +4,10 @@
  * [567] 字符串的排列
  */
 class Solution {
+    /**
+     * 两个数组统计各个字符出现的次数
+     * count记录两个数组中, 对应字符出现次数相同的字符的个数
+     */
     public boolean checkInclusion(String s1, String s2) {
         if (s1.length() > s2.length()) {
             return false;
@@ -27,17 +31,20 @@ class Solution {
             if (l == r) {
                 continue;
             }
-            a2[r]++;
-            a2[l]--;
             if (a2[r] == a1[r]) {
-                count++;
-            } else if (a2[r] == a1[r] + 1) {
                 count--;
             }
+            a2[r]++;
+            if (a2[r] == a1[r]) {
+                count++;
+            }
+
+            if (a2[l] == a1[l]) {
+                count--;
+            }
+            a2[l]--;
             if (a2[l] == a1[l]) {
                 count++;
-            } else if (a2[l] == a1[l] - 1) {
-                count--;
             }
         }
         return count == 26;
