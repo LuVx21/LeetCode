@@ -4,6 +4,45 @@
  * [567] 字符串的排列
  */
 class Solution {
+    public boolean checkInclusion(String s1, String s2) {
+        if (s1.length() > s2.length()) {
+            return false;
+        }
+        int[] a1 = new int[26], a2 = new int[26];
+        for (int i = 0; i < s1.length(); i++) {
+            a1[s1.charAt(i) - 'a']++;
+            a2[s2.charAt(i) - 'a']++;
+        }
+        int count = 0;
+        for (int i = 0; i < 26; i++) {
+            if (a1[i] == a2[i]) {
+                count++;
+            }
+        }
+        for (int i = 0; i < s2.length() - s1.length(); i++) {
+            if (count == 26) {
+                return true;
+            }
+            int l = s2.charAt(i) - 'a', r = s2.charAt(i + s1.length()) - 'a';
+            if (l == r) {
+                continue;
+            }
+            a2[r]++;
+            a2[l]--;
+            if (a2[r] == a1[r]) {
+                count++;
+            } else if (a2[r] == a1[r] + 1) {
+                count--;
+            }
+            if (a2[l] == a1[l]) {
+                count++;
+            } else if (a2[l] == a1[l] - 1) {
+                count--;
+            }
+        }
+        return count == 26;
+    }
+
     /**
      * <pre>
      * eidbaooo
@@ -13,9 +52,9 @@ class Solution {
      * ei,id,db,ba,ao,oo,oo
      * </pre>
      * <p>
-     * 滑动窗口: 使用数组
+     * 滑动窗口: 使用数组 TODO: 优化
      */
-    public boolean checkInclusion(String s1, String s2) {
+    public boolean checkInclusion1(String s1, String s2) {
         if (s1.length() > s2.length()) {
             return false;
         }
