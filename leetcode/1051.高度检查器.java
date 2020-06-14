@@ -1,5 +1,4 @@
 
-```Java
 public int heightChecker(int[] heights) {
     int length = heights.length;
     int[] temp = Arrays.copyOf(heights, length);
@@ -14,4 +13,3 @@ public int heightChecker(int[] heights) {
 
     return result;
 }
-```

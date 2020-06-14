@@ -1,6 +1,5 @@
 
 
-```Java
 class Solution {
     public String[] findOcurrences(String text, String first, String second) {
         List<String> result = new ArrayList<>();
@@ -17,4 +16,3 @@ class Solution {
         return result.toArray(new String[result.size()]);
     }
 }
-```
