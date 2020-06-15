@@ -1,12 +1,3 @@
-<details>
-<summary>点击展开目录</summary>
-<!-- TOC -->
-
-
-<!-- /TOC -->
-</details>
-
-```Java
 /*
  * @lc app=leetcode.cn id=92 lang=java
  *
@@ -90,5 +81,3 @@ class Solution {
         return array;
     }
 }
-
-```
