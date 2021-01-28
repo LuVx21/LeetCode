@@ -1,4 +1,7 @@
+package org.luvx.remember.a;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class KMP {
@@ -61,6 +64,6 @@ public class KMP {
     }
 
     public static void main(String[] args) {
-        System.out.println(kmp("ABC ABCDAB ABCDABCDABDE","ABCDABD"));
+        System.out.println(kmp("ABC ABCDAB ABCDABCDABDE", "ABCDABD"));
     }
 }
