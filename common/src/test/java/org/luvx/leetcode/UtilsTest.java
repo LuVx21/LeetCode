@@ -1,4 +1,4 @@
-package org.luvx.leetcode.common;
+package org.luvx.leetcode;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
