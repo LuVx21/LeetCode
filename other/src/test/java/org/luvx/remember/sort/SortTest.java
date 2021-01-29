@@ -9,7 +9,7 @@ public class SortTest {
 
     @Test
     public void test() {
-        Sorts.sort5(array);
+        SimpleSort.sort5(array);
         System.out.println(Arrays.toString(array));
     }
 }

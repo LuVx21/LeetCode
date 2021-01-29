@@ -1,5 +1,6 @@
 package org.luvx.remember.sort;
 
+import org.apache.commons.lang3.ArrayUtils;
 
 public class SelectSort {
     /**
@@ -18,9 +19,7 @@ public class SelectSort {
                 }
             }
             if (minIndex != i) {
-                int temp = array[i];
-                array[i] = array[minIndex];
-                array[minIndex] = temp;
+                ArrayUtils.swap(array, i, minIndex);
             }
         }
     }

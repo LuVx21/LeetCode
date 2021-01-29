@@ -1,8 +1,11 @@
 package org.luvx.remember.sort;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 /**
  * 冒泡排序
- * 以下为升序排序
+ *
+ * @author Ren, Xie
  */
 public class BubbleSort {
 
@@ -17,9 +20,7 @@ public class BubbleSort {
         for (int i = 0; i < length; i++) {
             for (int j = 1; j < length - i; j++) {
                 if (array[j - 1] > array[j]) {
-                    int temp = array[j];
-                    array[j] = array[j - 1];
-                    array[j - 1] = temp;
+                    ArrayUtils.swap(array, j - 1, j);
                 }
             }
         }
@@ -39,15 +40,14 @@ public class BubbleSort {
             boolean isSorted = true;
             for (int j = 1; j < length - i; j++) {
                 if (array[j - 1] > array[j]) {
-                    int temp = array[j];
-                    array[j] = array[j - 1];
-                    array[j - 1] = temp;
+                    ArrayUtils.swap(array, j - 1, j);
 
                     isSorted = false;
                 }
             }
-            if (isSorted)
+            if (isSorted) {
                 break;
+            }
         }
     }
 
@@ -68,17 +68,16 @@ public class BubbleSort {
             boolean isSorted = true;
             for (int j = 1; j < maxIndex; j++) {
                 if (array[j - 1] > array[j]) {
-                    int temp = array[j];
-                    array[j] = array[j - 1];
-                    array[j - 1] = temp;
+                    ArrayUtils.swap(array, j - 1, j);
 
                     startIndex = j;
                     isSorted = false;
                 }
             }
             maxIndex = startIndex;
-            if (isSorted)
+            if (isSorted) {
                 break;
+            }
         }
     }
 
@@ -94,16 +93,12 @@ public class BubbleSort {
         for (int i = 0; i < length / 2; i++) {
             for (int j = i; j < length - 1 - i; j++) {
                 if (array[j] > array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+                    ArrayUtils.swap(array, j, j + 1);
                 }
             }
             for (int j = length - 1 - (i + 1); j > i; j--) {
                 if (array[j] < array[j - 1]) {
-                    int temp = array[j];
-                    array[j] = array[j - 1];
-                    array[j - 1] = temp;
+                    ArrayUtils.swap(array, j - 1, j);
                 }
             }
         }
