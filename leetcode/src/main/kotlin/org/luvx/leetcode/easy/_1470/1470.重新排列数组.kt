@@ -1,4 +1,4 @@
-package org.luvx.leetcode.todo._1470
+package org.luvx.leetcode.easy._1470
 /*
  * @lc app=leetcode.cn id=1470 lang=kotlin
  *
