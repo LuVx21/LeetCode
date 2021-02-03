@@ -1,3 +1,4 @@
+package org.luvx.leetcode.easy._1624
 /*
  * @lc app=leetcode.cn id=1624 lang=kotlin
  *
@@ -47,10 +48,11 @@ class Solution {
 
 fun main() {
     val array = intArrayOf(4, 3, 2, 7, 8, 2, 3, 1)
-    println(Solution().maxLengthBetweenEqualCharacters("aaaaaaa"))
-    println(Solution().maxLengthBetweenEqualCharacters("aabcdefg"))
-//    println(Solution().maxLengthBetweenEqualCharacters("cabbac"))
-//    println(Solution().maxLengthBetweenEqualCharacters("cabdzz"))
-//    println(Solution().maxLengthBetweenEqualCharacters("ccbdzb"))
-//    println(Solution().maxLengthBetweenEqualCharacters("ccbdzc"))
+    val exec = Solution()
+    println(exec.maxLengthBetweenEqualCharacters("aaaaaaa"))
+    println(exec.maxLengthBetweenEqualCharacters("aabcdefg"))
+//    println(exec.maxLengthBetweenEqualCharacters("cabbac"))
+//    println(exec.maxLengthBetweenEqualCharacters("cabdzz"))
+//    println(exec.maxLengthBetweenEqualCharacters("ccbdzb"))
+//    println(exec.maxLengthBetweenEqualCharacters("ccbdzc"))
 }

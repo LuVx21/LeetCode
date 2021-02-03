@@ -1,3 +1,4 @@
+package org.luvx.leetcode.medium._442
 /*
  * @lc app=leetcode.cn id=442 lang=kotlin
  *
@@ -6,6 +7,7 @@
 
 // @lc code=start
 import kotlin.math.abs
+
 class Solution {
     /**
      * 给定一个整数数组 a，其中1 ≤ a[i] ≤ n （n为数组长度）, 其中有些元素出现两次而其他元素出现一次。
@@ -51,6 +53,6 @@ class Solution {
 fun main() {
     val array = intArrayOf(4, 3, 2, 7, 8, 2, 1, 1)
     println(
-            Solution().findDuplicates(array)
+        Solution().findDuplicates(array)
     )
 }

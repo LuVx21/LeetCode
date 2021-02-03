@@ -1,3 +1,4 @@
+package org.luvx.leetcode.easy._268
 /*
  * @lc app=leetcode.cn id=268 lang=kotlin
  *

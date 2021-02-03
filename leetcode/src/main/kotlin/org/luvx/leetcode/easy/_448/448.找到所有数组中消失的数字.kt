@@ -1,3 +1,4 @@
+package org.luvx.leetcode.easy._448
 /*
  * @lc app=leetcode.cn id=448 lang=kotlin
  *
@@ -6,6 +7,7 @@
 
 // @lc code=start
 import kotlin.math.abs
+
 class Solution {
     fun findDisappearedNumbers(nums: IntArray): List<Int> {
         for (num in nums) {
@@ -43,6 +45,6 @@ class Solution {
 fun main() {
     val array = intArrayOf(4, 3, 2, 7, 8, 2, 3, 1)
     println(
-            Solution().findDisappearedNumbers(array)
+        Solution().findDisappearedNumbers(array)
     )
 }
