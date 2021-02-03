@@ -1,4 +1,9 @@
 package org.luvx.leetcode.easy._1721
+
+import org.luvx.leetcode.ListNode
+import org.luvx.leetcode.Utils.initLinked
+import org.luvx.leetcode.Utils.printLink
+
 /*
  * @lc app=leetcode.cn id=1721 lang=kotlin
  *
@@ -44,25 +49,8 @@ class Solution {
 }
 // @lc code=end
 
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
-
-    constructor(`val`: Int, next: ListNode?) : this(`val`) {
-        this.next = next
-    }
-}
-
-fun printLink(head: ListNode?) {
-    var root = head
-    while (root != null) {
-        print(root.`val`.toString() + if (root.next == null) "" else "->")
-        root = root.next
-    }
-    println("\n--------------")
-}
-
 fun main() {
-    val head = ListNode(1, ListNode(2, ListNode(3, ListNode(4, ListNode(5)))))
+    val head = initLinked(1, 2, 3, 4, 5)
     val exec = Solution()
     printLink(exec.swapNodes(head, 2))
     printLink(exec.swapNodes(head, 2))

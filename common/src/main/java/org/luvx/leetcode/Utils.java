@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class Utils {
-    public static ListNode initLinked(int[] array) {
+    public static ListNode initLinked(int... array) {
         ListNode head = null, temp = null;
         for (int i = 0; i < array.length; i++) {
             if (i == 0) {
@@ -21,7 +21,7 @@ public class Utils {
         return head;
     }
 
-    public static ListNode initLinked1(int[] array) {
+    public static ListNode initLinked1(int... array) {
         ListNode[] ns = new ListNode[array.length];
         for (int i = 0; i < array.length; i++) {
             ListNode n = new ListNode(array[i]);
