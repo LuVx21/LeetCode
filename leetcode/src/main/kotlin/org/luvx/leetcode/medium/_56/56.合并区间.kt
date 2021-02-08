@@ -34,14 +34,13 @@ class Solution {
         val result = arrayListOf<IntArray>()
         var prev = intervals[0]
         for (i in 1 until len) {
-            val (pS, pE) = prev
-            val (cS, cE) = intervals[i]
-            if (pE < cS) {
+            val current = intervals[i]
+            if (prev[1] < current[0]) {
                 result.add(prev)
-                prev = intervals[i]
+                prev = current
             } else {
-                prev[0] = minOf(pS, cS)
-                prev[1] = maxOf(pE, cE)
+                prev[0] = minOf(prev[0], current[0])
+                prev[1] = maxOf(prev[1], current[1])
             }
         }
         result.add(prev)
@@ -60,7 +59,7 @@ fun main() {
         intArrayOf(1, 4),
 //        intArrayOf(1, 4)
         intArrayOf(2, 3),
-         intArrayOf(4, 5)
+        intArrayOf(4, 5)
     )
     exec.merge(array).contentDeepToString().out()
 }
