@@ -1,4 +1,4 @@
-package org.luvx.leetcode.todo._1668
+package org.luvx.leetcode.easy._1668
 
 import org.luvx.leetcode.out
 
