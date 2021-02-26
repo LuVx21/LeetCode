@@ -10,3 +10,7 @@ fun Any.out(vararg messages: Any?) {
         println(messages.contentDeepToString())
     }
 }
+
+fun out(vararg messages: Any?) {
+    println(messages.contentDeepToString())
+}
