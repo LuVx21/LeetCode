@@ -10,7 +10,7 @@ import org.luvx.leetcode.out
 
 // @lc code=start
 class Solution {
-    fun lengthOfLongestSubstring0(s: String): Int {
+    fun lengthOfLongestSubstring(s: String): Int {
         val length = s.length
         if (length == 0 || length == 1) {
             return length
@@ -21,8 +21,8 @@ class Solution {
         while (i < length) {
             val key = s[i]
             start = maxOf(map[key] ?: start, start)
-            max = maxOf(max, i - start + 1)
             map[key] = ++i
+            max = maxOf(max, i - start)
         }
         return max
     }
@@ -34,7 +34,7 @@ class Solution {
      * abcdbabcbb -> abcd
      * pwwkew -> wke
      */
-    fun lengthOfLongestSubstring(s: String): Int {
+    fun lengthOfLongestSubstring0(s: String): Int {
         val length = s.length
         if (length == 0 || length == 1) {
             return length
@@ -57,10 +57,11 @@ class Solution {
 // @lc code=end
 
 fun main() {
-    val s = "dvdf"
     val exec = Solution()
-    out(
-        exec.lengthOfLongestSubstring0(s),
-        exec.lengthOfLongestSubstring(s)
-    )
+    arrayOf("abcabcbb", "abcdbabcbb", "pwwkew", "dvdf", "abcdb").forEach {
+        out(
+            exec.lengthOfLongestSubstring0(it),
+            exec.lengthOfLongestSubstring(it)
+        )
+    }
 }
