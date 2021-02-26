@@ -16,7 +16,9 @@ class Solution {
         if (strs.length == 1) {
             return strs[0];
         }
-        int minLength = Arrays.stream(strs).map(String::length).min(Integer::compare).orElse(0);
+        int minLength = Arrays.stream(strs)
+                // .map(String::length).min(Integer::compare).orElse(0)
+                .mapToInt(String::length).min().getAsInt();
 
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < minLength; i++) {

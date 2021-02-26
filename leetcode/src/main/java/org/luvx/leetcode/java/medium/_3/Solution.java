@@ -1,3 +1,9 @@
+package org.luvx.leetcode.java.medium._3;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 /*
  * @lc app=leetcode.cn id=3 lang=java
  *
@@ -12,7 +18,7 @@ class Solution {
      * map: k: s中的字符;v: 字符出现的最后位置
      * start: 不含有重复字符的子串的起点位置
      */
-    public int lengthOfLongestSubstring(String s) {
+    public int lengthOfLongestSubstring0(String s) {
         if (s.length() == 0) {
             return 0;
         }
