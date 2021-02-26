@@ -34,11 +34,13 @@ public class Utils {
         return ns[0];
     }
 
-    public static void printLink(ListNode head) {
-        while (head != null) {
-            System.out.print(head.val + (head.next == null ? "" : "->"));
-            head = head.next;
+    public static void printLink(ListNode... heads) {
+        for (ListNode head : heads) {
+            while (head != null) {
+                System.out.print(head.val + (head.next == null ? "" : "->"));
+                head = head.next;
+            }
+            System.out.println("\n--------------");
         }
-        System.out.println("\n--------------");
     }
 }
