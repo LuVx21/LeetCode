@@ -9,10 +9,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @AllArgsConstructor
 public class ListNode {
-    public Object   val;
+    public int      val;
     public ListNode next;
 
-    public ListNode(Object x) {
+    public ListNode(int x) {
         val = x;
     }
 }
