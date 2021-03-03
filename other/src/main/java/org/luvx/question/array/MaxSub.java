@@ -1,6 +1,5 @@
 package org.luvx.question.array;
 
-import java.util.Arrays;
 import java.util.Stack;
 
 public class MaxSub {
@@ -29,29 +28,43 @@ public class MaxSub {
             sums[i] = sums[i - 1] + array[i - 1];
         }
 
-        System.out.println("  " + Arrays.toString(array));
-        System.out.println(Arrays.toString(sums));
+        // System.out.println("  " + Arrays.toString(array));
+        // System.out.println(Arrays.toString(sums));
 
         int max = 0;
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < len; i++) {
             while (!stack.empty() && array[stack.peek()] >= array[i]) {
-                int pop = array[stack.pop()];
-                int l = stack.empty() ? -1 : stack.peek();
-                // l和r是边界，因此区间是[l+1,r-1]，其区间和 sums[r+1]-sums[l]
-                int dist = sums[i] - sums[l + 1];
-                max = Math.max(max, pop * dist);
+                final int a = min_sum(stack, array, sums, i);
+                max = Math.max(max, a);
+
+                // int pop = array[stack.pop()];
+                // int l = stack.empty() ? -1 : stack.peek();
+                // // l和r是边界，因此区间是[l+1,r-1]，其区间和 sums[r+1]-sums[l]
+                // int dist = sums[i] - sums[l + 1];
+                // max = Math.max(max, pop * dist);
             }
             stack.push(i);
         }
 
         while (!stack.empty()) {
-            int pop = array[stack.pop()];
-            int l = stack.empty() ? -1 : stack.peek();
-            int dist = sums[len] - sums[l + 1];
-            max = Math.max(max, pop * dist);
+            final int a = min_sum(stack, array, sums, len);
+            max = Math.max(max, a);
+
+            // int pop = array[stack.pop()];
+            // int l = stack.empty() ? -1 : stack.peek();
+            // int dist = sums[len] - sums[l + 1];
+            // max = Math.max(max, pop * dist);
         }
 
         return max;
+    }
+
+    private int min_sum(Stack<Integer> stack, int[] array, int[] sums, int i) {
+        int pop = array[stack.pop()];
+        int l = stack.empty() ? -1 : stack.peek();
+        // l和r是边界，因此区间是[l+1,r-1]，其区间和 sums[r+1]-sums[l]
+        int dist = sums[i] - sums[l + 1];
+        return pop * dist;
     }
 }
