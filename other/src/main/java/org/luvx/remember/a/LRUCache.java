@@ -15,52 +15,50 @@ public class LRUCache {
     private final Node tail;
 
     public LRUCache(int capacity) {
-        this.count = 0;
+        count = 0;
         this.capacity = capacity;
 
         head = new Node();
         head.pre = null;
 
         tail = new Node();
-        tail.post = null;
+        tail.next = null;
 
-        head.post = tail;
+        head.next = tail;
         tail.pre = head;
+    }
+
+    private void moveToHead(Node node) {
+        removeNode(node);
+        addNode(node);
     }
 
     private void addNode(Node node) {
         node.pre = head;
-        node.post = head.post;
-        head.post.pre = node;
-        head.post = node;
+        node.next = head.next;
+        head.next.pre = node;
+        head.next = node;
     }
 
     private void removeNode(Node node) {
-        Node pre = node.pre;
-        Node post = node.post;
+        Node pre = node.pre, next = node.next;
 
-        pre.post = post;
-        post.pre = pre;
-    }
-
-    private void moveToHead(Node node) {
-        this.removeNode(node);
-        this.addNode(node);
+        pre.next = next;
+        next.pre = pre;
     }
 
     private Node popTail() {
         Node res = tail.pre;
-        this.removeNode(res);
+        removeNode(res);
         return res;
     }
-
 
     public int get(int key) {
         Node node = cache.get(key);
         if (node == null) {
             return -1;
         }
-        this.moveToHead(node);
+        moveToHead(node);
         return node.value;
     }
 
@@ -70,17 +68,17 @@ public class LRUCache {
             Node newNode = new Node();
             newNode.key = key;
             newNode.value = value;
-            this.cache.put(key, newNode);
-            this.addNode(newNode);
-            ++count;
+            cache.put(key, newNode);
+            addNode(newNode);
+            count++;
             if (count > capacity) {
-                Node tail = this.popTail();
-                this.cache.remove(tail.key);
-                --count;
+                Node tail = popTail();
+                cache.remove(tail.key);
+                count--;
             }
         } else {
             node.value = value;
-            this.moveToHead(node);
+            moveToHead(node);
         }
     }
 
@@ -88,6 +86,6 @@ public class LRUCache {
         int  key;
         int  value;
         Node pre;
-        Node post;
+        Node next;
     }
 }
