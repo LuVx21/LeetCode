@@ -1,18 +1,7 @@
-<details>
-<summary>点击展开目录</summary>
-<!-- TOC -->
+package org.luvx.leetcode.java.easy._160;
 
-- [方式1](#方式1)
-
-<!-- /TOC -->
-</details>
-
-## 方式1
-
-* 逻辑上将两个链表合并, 会产生两个长度相同的链表
-* 重合的部分肯定位于这两个长链表的后面
-
-```Java
+import org.luvx.leetcode.ListNode;
+// @lc code=start
 /*
  * @lc app=leetcode.cn id=160 lang=java
  *
@@ -20,6 +9,7 @@
  */
 /**
  * Definition for singly-linked list.
+ * <pre>
  * public class ListNode {
  *     int val;
  *     ListNode next;
@@ -28,26 +18,25 @@
  *         next = null;
  *     }
  * }
+ * </pre>
  */
+import java.util.ArrayList;
+import java.util.List;
+
 public class Solution {
     /**
      * 逻辑上将两个链表合并, 会产生两个长度相同的链表
-     *
-     * @param headA
-     * @param headB
-     * @return
+     * 重合的部分肯定位于这两个长链表的后面
      */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         if (headA == null || headB == null) {
             return null;
         }
-        ListNode a = headA;
-        ListNode b = headB;
+        ListNode a = headA, b = headB;
         while (a != b) {
             a = a == null ? headB : a.next;
             b = b == null ? headA : b.next;
         }
-
         return a;
     }
 
@@ -84,6 +73,7 @@ public class Solution {
 
     /**
      * 粗暴
+     *
      * @param headA
      * @param headB
      * @return
@@ -103,5 +93,4 @@ public class Solution {
         return null;
     }
 }
-```
-
+// @lc code=end
