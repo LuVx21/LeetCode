@@ -16,9 +16,8 @@ public class BinarySearch {
                 return binarySearch(array, start, middle - 1, i);
             } else if (i > array[middle]) {
                 return binarySearch(array, middle + 1, end, i);
-            } else {
-                return middle;
             }
+            return middle;
         }
         return -1;
     }
@@ -29,9 +28,7 @@ public class BinarySearch {
      * @param array
      */
     public static int binarySearchByLoop(int[] array, int i) {
-        int start = 0;
-        int end = array.length - 1;
-
+        int start = 0, end = array.length - 1;
         while (start <= end) {
             int middle = start + (end - start) / 2;
             if (i < array[middle]) {

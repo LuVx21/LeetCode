@@ -10,16 +10,14 @@ public class InsertionSort {
      * @param array
      */
     public static void insertionSort(int[] array) {
-        int length = array.length;
-        for (int i = 1; i < length; i++) {
-            int temp = array[i];
+        int len = array.length;
+        for (int i = 1; i < len; i++) {
             int j = i - 1;
-            while (j >= 0 && (array[j] > temp)) {
+            while (j >= 0 && array[j] > array[i]) {
                 array[j + 1] = array[j];
                 j--;
             }
-
-            array[j + 1] = temp;
+            array[j + 1] = array[i];
         }
     }
 
