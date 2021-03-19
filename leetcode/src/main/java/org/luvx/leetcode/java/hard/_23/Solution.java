@@ -1,18 +1,35 @@
+package org.luvx.leetcode.java.hard._23;
+
+import org.luvx.leetcode.ListNode;
+
+// @lc code=start
 /*
  * @lc app=leetcode.cn id=23 lang=java
  *
  * [23] 合并K个排序链表
  */
+
 /**
  * Definition for singly-linked list.
+ * <pre>
  * public class ListNode {
  *     int val;
  *     ListNode next;
- *     ListNode(int x) { val = x; }
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
+ * </pre>
  */
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 class Solution {
     /**
+     * 给你一个链表数组，每个链表都已经按升序排列。
+     * <p>
+     * 请你将所有链表合并到一个升序链表中，返回合并后的链表。
+     * <p>
      * offer操作兼具根据头节点排序链表的作用
      */
     public ListNode mergeKLists(ListNode[] lists) {
@@ -37,7 +54,7 @@ class Solution {
         return fakeHead.next;
     }
 
-       /**
+    /**
      * 合并 k 个排序链表，返回合并后的排序链表。请分析和描述算法的复杂度。
      */
     public ListNode mergeKLists1(ListNode[] lists) {
@@ -81,4 +98,5 @@ class Solution {
         return fakeHead.next;
     }
 }
+// @lc code=end
 
