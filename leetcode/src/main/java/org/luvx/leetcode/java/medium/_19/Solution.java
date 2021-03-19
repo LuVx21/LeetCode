@@ -1,22 +1,30 @@
+package org.luvx.leetcode.java.medium._19;
+
+import org.luvx.leetcode.ListNode;
+
 /*
  * @lc app=leetcode.cn id=19 lang=java
  *
- * [19] 删除链表的倒数第N个节点
+ * [19] 删除链表的倒数第 N 个结点
  */
+
+// @lc code=start
+
 /**
  * Definition for singly-linked list.
+ * <pre>
  * public class ListNode {
  *     int val;
  *     ListNode next;
- *     ListNode(int x) { val = x; }
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
+ * </pre>
  */
 class Solution {
-
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode start = new ListNode(0);
-        start.next = head;
-        ListNode slow = start, fast = start;
+        ListNode start = new ListNode(-1, head), slow = start, fast = start;
         for (int i = 1; i <= n + 1; i++) {
             fast = fast.next;
         }
@@ -82,4 +90,4 @@ class Solution {
         }
     }
 }
-
+// @lc code=end
