@@ -49,34 +49,6 @@ class Solution {
         return result.next;
     }
 
-    public ListNode addTwoNumbers1(ListNode l1, ListNode l2) {
-        ListNode result = new ListNode(0), current = result;
-        int plus = 0;
-        while (l1 != null && l2 != null) {
-            final int i = l1.val + l2.val + plus;
-            plus = i / 10;
-            current = current.next = new ListNode(i % 10);
-            l1 = l1.next;
-            l2 = l2.next;
-        }
-        while (l1 != null) {
-            final int i = l1.val + plus;
-            plus = i / 10;
-            current = current.next = new ListNode(i % 10);
-            l1 = l1.next;
-        }
-        while (l2 != null) {
-            final int i = l2.val + plus;
-            plus = i / 10;
-            current = current.next = new ListNode(i % 10);
-            l2 = l2.next;
-        }
-        if (plus != 0) {
-            current.next = new ListNode(plus);
-        }
-        return result.next;
-    }
-
     // 如果存储是顺序存储呢, 如:
     // 342: 3 -> 4 -> 2
     // 465: 4 -> 6 -> 5
