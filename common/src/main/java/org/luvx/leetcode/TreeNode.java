@@ -21,7 +21,15 @@ public class TreeNode {
         val = x;
     }
 
-    public static TreeNode of(int x, TreeNode left, TreeNode right) {
-        return new TreeNode(x, left, right);
+    public static TreeNode of(int x, TreeNode... lr) {
+        final TreeNode root = new TreeNode(x);
+        if (lr == null || lr.length == 0) {
+            return root;
+        }
+        root.left = lr[0];
+        if (lr.length >= 2) {
+            root.right = lr[1];
+        }
+        return root;
     }
 }
