@@ -20,4 +20,8 @@ public class TreeNode {
     public TreeNode(int x) {
         val = x;
     }
+
+    public static TreeNode of(int x, TreeNode left, TreeNode right) {
+        return new TreeNode(x, left, right);
+    }
 }
