@@ -1,5 +1,6 @@
 package org.luvx.question.array;
 
+import com.google.common.collect.Lists;
 import org.junit.Test;
 
 import java.util.List;
@@ -8,7 +9,7 @@ public class MaxSubTest {
     @Test
     public void maxSubTest() {
         MaxSub exec = new MaxSub();
-        List<int[]> list = List.of(
+        List<int[]> list = Lists.newArrayList(
                 new int[]{1, 2, 4, 5, 3},
                 new int[]{1, 2, 4, 5, 3, 2},
                 new int[]{1, 2, 4, 5, 3, 4},
