@@ -3,7 +3,7 @@ package org.luvx.leetcode
 public typealias ListNodeKt = ListNode
 public typealias TreeKt = TreeNode
 
-fun Any.out(vararg messages: Any?): Any {
+fun Any?.out(vararg messages: Any?): Any? {
     println(this)
     if (messages.isNotEmpty()) {
         println("-----------------")

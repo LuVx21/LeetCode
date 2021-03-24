@@ -32,4 +32,8 @@ public class TreeNode {
         }
         return root;
     }
+
+    public boolean isLeaf() {
+        return left == null && right == null;
+    }
 }
