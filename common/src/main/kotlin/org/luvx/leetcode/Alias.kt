@@ -1,7 +1,8 @@
 package org.luvx.leetcode
 
-public typealias ListNodeKt = ListNode
-public typealias TreeKt = TreeNode
+typealias ListNodeKt = ListNode
+typealias TreeKt = TreeNode
+typealias NTreeNode = Node
 
 fun Any?.out(vararg messages: Any?): Any? {
     println(this)

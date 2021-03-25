@@ -16,7 +16,7 @@ public class Node {
     public int        val;
     public List<Node> children;
 
-    public Node(int _val) {
-        val = _val;
+    public Node(int val) {
+        this.val = val;
     }
 }
