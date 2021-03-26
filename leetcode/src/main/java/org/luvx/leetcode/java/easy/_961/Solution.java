@@ -1,4 +1,4 @@
-package org.luvx.leetcode.java.easy._916;
+package org.luvx.leetcode.java.easy._961;
 
 // @lc code=start
 
@@ -24,3 +24,4 @@ class Solution {
     }
 }
 // @lc code=end
+
