@@ -1,4 +1,4 @@
-package org.luvx.remember.a;
+package org.luvx.remember.lru;
 
 import java.util.Hashtable;
 
