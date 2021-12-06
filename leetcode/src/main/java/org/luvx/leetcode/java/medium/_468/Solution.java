@@ -1,7 +1,5 @@
 package org.luvx.leetcode.java.medium._468;
 
-import java.util.Arrays;
-
 // @lc code=start
 /*
  * @lc app=leetcode.cn id=468 lang=java
@@ -44,8 +42,12 @@ class Solution {
         }
         try {
             int parsedInt = Integer.parseInt(token);
-            if (parsedInt < 0 || parsedInt > 255) return false;
-            if (parsedInt == 0 && token.charAt(0) != '0') return false;
+            if (parsedInt < 0 || parsedInt > 255) {
+                return false;
+            }
+            if (parsedInt == 0 && token.charAt(0) != '0') {
+                return false;
+            }
         } catch (NumberFormatException nfe) {
             return false;
         }
@@ -61,22 +63,29 @@ class Solution {
             return false;
         }
         String[] tokens = ip.split(":");
-        if (tokens.length != 8) return false;
+        if (tokens.length != 8) {
+            return false;
+        }
         for (String token : tokens) {
-            if (!isValidIPv6Token(token)) return false;
+            if (!isValidIPv6Token(token)) {
+                return false;
+            }
         }
         return true;
     }
 
     public boolean isValidIPv6Token(String token) {
-        if (token.length() > 4 || token.length() == 0) return false;
+        if (token.length() > 4 || token.length() == 0) {
+            return false;
+        }
         char[] chars = token.toCharArray();
         for (char c : chars) {
             boolean isDigit = c >= 48 && c <= 57;
             boolean isUppercaseAF = c >= 65 && c <= 70;
             boolean isLowerCaseAF = c >= 97 && c <= 102;
-            if (!(isDigit || isUppercaseAF || isLowerCaseAF))
+            if (!(isDigit || isUppercaseAF || isLowerCaseAF)) {
                 return false;
+            }
         }
         return true;
     }

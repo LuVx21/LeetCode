@@ -55,8 +55,8 @@ class WordDictionary {
         return false;
     }
 
-    public class TrieNode {
-        public String     word = "";
+    private static class TrieNode {
+        public String word = "";
         public TrieNode[] children;
 
         public TrieNode() {
