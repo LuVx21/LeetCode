@@ -1,27 +1,25 @@
+package org.luvx.leetcode.java.medium._1262;
+
+// @lc code=start
 /*
  * @lc app=leetcode.cn id=1262 lang=java
  *
  * [1262] 可被三整除的最大和
  */
-
-// @lc code=start
 class Solution {
     /**
      * 3,6,5,1,8 -> 3 6 1 8 -> 18
      * 1,2,3,4,4 -> 1 3 4 4 -> 12
      * 2,3,4,4,4 -> 3 4 4 4 -> 15
      * 2,3,4,5 -> 3 4 5 -> 12
-     *
-     * @param nums
-     * @return
      */
     public int maxSumDivThree(int[] nums) {
-        final int T = 3;
-        int[] dp = new int[]{0, Integer.MIN_VALUE, Integer.MIN_VALUE};
+        final int N = 3;
+        int[] dp = new int[] {0, Integer.MIN_VALUE, Integer.MIN_VALUE};
         for (int num : nums) {
-            int[] dp2 = new int[T];
-            for (int i = 0; i < T; i++) {
-                int index = (i + num) % T;
+            int[] dp2 = new int[N];
+            for (int i = 0; i < N; i++) {
+                int index = (i + num) % N;
                 dp2[index] = Math.max(dp[index], dp[i] + num);
             }
             dp = dp2;
