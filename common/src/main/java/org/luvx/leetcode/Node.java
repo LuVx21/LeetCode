@@ -1,9 +1,11 @@
 package org.luvx.leetcode;
 
+import java.util.List;
+
+import com.google.common.collect.Lists;
+
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 /**
  * N叉树
@@ -18,5 +20,13 @@ public class Node {
 
     public Node(int val) {
         this.val = val;
+    }
+
+    public static Node of(int val) {
+        return new Node(val);
+    }
+
+    public static Node of(int val, Node... nodes) {
+        return new Node(val, Lists.newArrayList(nodes));
     }
 }
