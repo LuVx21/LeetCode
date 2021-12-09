@@ -1,7 +1,6 @@
 package org.luvx.leetcode.easy._589
 
 import org.luvx.leetcode.Node
-// @lc code=start
 /*
  * @lc app=leetcode.cn id=589 lang=kotlin
  *
@@ -15,6 +14,7 @@ import org.luvx.leetcode.Node
  * }
  * </pre>
  */
+// @lc code=start
 import java.util.*
 
 class Solution {
