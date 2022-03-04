@@ -30,17 +30,12 @@ class Solution {
     }
 
     public boolean isP(Character c1, Character c2) {
-        if ((c1.equals('(') && c2.equals(')'))
+        return (c1.equals('(') && c2.equals(')'))
                 || (c1.equals(')') && c2.equals('(')) ||
                 (c1.equals('[') && c2.equals(']'))
                 || (c1.equals(']') && c2.equals('[')) ||
                 (c1.equals('{') && c2.equals('}'))
-                || (c1.equals('}') && c2.equals('{'))
-        ) {
-            return true;
-        } else {
-            return false;
-        }
+                || (c1.equals('}') && c2.equals('{'));
     }
 }
 // @lc code=end

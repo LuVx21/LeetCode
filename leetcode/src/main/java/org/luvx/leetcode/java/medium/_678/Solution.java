@@ -18,24 +18,53 @@ class Solution {
      * (*))((*)(*()) -> true
      */
     public boolean checkValidString(String s) {
-        int low = 0, high = 0;
+        /*
+         *左括号的数量,分别为*作为右括号,*作为左括号时
+         */
+        int right = 0, left = 0;
         for (char c : s.toCharArray()) {
             if (c == '(') {
-                high++;
-                low++;
+                left++;
+                right++;
             } else if (c == ')') {
-                high--;
-                low--;
+                left--;
+                right--;
             } else if (c == '*') {
-                high++;
-                low--;
+                left++;
+                right--;
             }
-            if (high < 0) {
+            // 此时数量: * 加 ( 小于 ), 之后有再多的*或(也无用了
+            if (left < 0) {
                 return false;
             }
-            low = Math.max(low, 0);
+            right = Math.max(right, 0);
         }
-        return low == 0;
+        return right == 0;
+    }
+
+    public boolean checkValidString0(String s) {
+        Stack<Integer> left = new Stack<>(), star = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                left.push(i);
+            } else if (s.charAt(i) == '*') {
+                star.push(i);
+            } else {
+                if (left.empty() && star.empty()) {
+                    return false;
+                }
+                (left.empty() ? star : left).pop();
+            }
+        }
+
+        while (!left.empty() && !star.empty()) {
+            if (left.peek() > star.peek()) {
+                return false;
+            }
+            left.pop();
+            star.pop();
+        }
+        return left.empty();
     }
 
     public boolean checkValidString1(String s) {
