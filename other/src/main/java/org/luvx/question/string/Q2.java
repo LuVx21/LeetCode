@@ -21,6 +21,9 @@ public class Q2 {
                 return false;
             }
             cnt += (c == '(' ? 1 : -1);
+            if (cnt < 0) {
+                return false;
+            }
         }
         return cnt == 0;
     }
