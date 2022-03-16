@@ -1,5 +1,7 @@
 package org.luvx.remember.sort;
 
+import static org.apache.commons.lang3.ArrayUtils.swap;
+
 import org.apache.commons.lang3.ArrayUtils;
 
 /**
@@ -11,6 +13,7 @@ public class BubbleSort {
 
     /**
      * 冒泡排序
+     * 外层循环控制遍历次数, 不用于定位元素
      *
      * @param array 排序数组
      */
@@ -19,7 +22,7 @@ public class BubbleSort {
         for (int i = 0; i < len; i++) {
             for (int j = 1; j < len - i; j++) {
                 if (array[j - 1] > array[j]) {
-                    ArrayUtils.swap(array, j - 1, j);
+                    swap(array, j - 1, j);
                 }
             }
         }
@@ -38,7 +41,7 @@ public class BubbleSort {
             boolean isSorted = true;
             for (int j = 1; j < len - i; j++) {
                 if (array[j - 1] > array[j]) {
-                    ArrayUtils.swap(array, j - 1, j);
+                    swap(array, j - 1, j);
                     isSorted = false;
                 }
             }
@@ -58,17 +61,17 @@ public class BubbleSort {
     public static void sort2(int[] array) {
         int len = array.length;
         // 有序区起点, 无序区终点
-        int startIndex = -1, maxIndex = len - 1;
+        int sortStart = len, unSortEnd = len;
         for (int i = 0; i < len; i++) {
             boolean isSorted = true;
-            for (int j = 1; j < maxIndex; j++) {
+            for (int j = 1; j < unSortEnd; j++) {
                 if (array[j - 1] > array[j]) {
-                    ArrayUtils.swap(array, j - 1, j);
+                    swap(array, j - 1, j);
                     isSorted = false;
-                    startIndex = j;
+                    sortStart = j;
                 }
             }
-            maxIndex = startIndex;
+            unSortEnd = sortStart;
             if (isSorted) {
                 break;
             }
@@ -86,14 +89,21 @@ public class BubbleSort {
         for (int i = 0; i < len / 2; i++) {
             for (int j = i; j < len - 1 - i; j++) {
                 if (array[j] > array[j + 1]) {
-                    ArrayUtils.swap(array, j, j + 1);
+                    swap(array, j, j + 1);
                 }
             }
             for (int j = len - 1 - (i + 1); j > i; j--) {
                 if (array[j] < array[j - 1]) {
-                    ArrayUtils.swap(array, j - 1, j);
+                    swap(array, j - 1, j);
                 }
             }
         }
+    }
+
+    public static void main(String[] args) {
+        //        int[] array = {3, 4, 2, 1, 5, 6, 7, 8};
+        int[] array = {5, 2, 3, 1};
+        sort2(array);
+        System.out.println(ArrayUtils.toString(array));
     }
 }

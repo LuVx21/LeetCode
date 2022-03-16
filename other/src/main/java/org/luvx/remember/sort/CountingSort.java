@@ -14,9 +14,6 @@ public class CountingSort {
 
     /**
      * 实现1:不使用新的数组
-     *
-     * @param array
-     * @param maxElement
      */
     private static void countSort(int[] array, int maxElement) {
         int[] countArray = genCountArray(array, maxElement);
@@ -30,9 +27,6 @@ public class CountingSort {
 
     /**
      * 实现2:使用新的数组
-     *
-     * @param array
-     * @param maxElement
      */
     private static void countSort1(int[] array, int maxElement) {
         int[] countArray = genCountArray(array, maxElement);
@@ -55,18 +49,14 @@ public class CountingSort {
     /**
      * 作成计数数组:存储了待排序数组中元素出现的次数
      *
-     * @param array      待排序数组
-     * @param maxElement
-     * @return
+     * @param array 待排序数组
      */
     private static int[] genCountArray(int[] array, int maxElement) {
         int[] countArray = new int[maxElement + 1];
-
-        for (int i = 0; i < array.length; i++) {
-            int val = array[i];
+        for (int val : array) {
             if (val < 0) {
-                System.out.println("下标超界");
-                return null;
+                // 默认待排序数组中无负数
+                throw new RuntimeException("下标超界");
             }
             countArray[val] += 1;
         }
