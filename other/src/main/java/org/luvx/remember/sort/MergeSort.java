@@ -14,13 +14,14 @@ public class MergeSort {
      * 递归实现的归并排序(自顶向下)
      *
      * @param array 待排序数组
-     * @param left  起点
+     * @param left 起点
      * @param right 终点
      */
     public static void MergeSortRecursion(int[] array, int left, int right) {
-        if (left == right)
+        if (left == right) {
             return;
-        int mid = (left + right) / 2;
+        }
+        int mid = left + (right - left) / 2;
         MergeSortRecursion(array, left, mid);
         MergeSortRecursion(array, mid + 1, right);
         Merge(array, left, mid, right);
@@ -29,7 +30,7 @@ public class MergeSort {
     /**
      * 非递归(迭代)实现的归并排序(自底向上)
      *
-     * @param array  待排序数组
+     * @param array 待排序数组
      * @param length 长度
      */
     public static void MergeSortIteration(int[] array, int length) {
@@ -53,18 +54,14 @@ public class MergeSort {
      * 合并子有序数组
      *
      * @param array 待排序数组
-     * @param left  起点
-     * @param mid   中点
+     * @param left 起点
+     * @param mid 中点
      * @param right 终点
      */
     private static void Merge(int[] array, int left, int mid, int right) {
         int length = right - left + 1;
         int[] temp = new int[length];
-
-        int index = 0;
-        int i = left;
-        int j = mid + 1;
-
+        int index = 0, i = left, j = mid + 1;
         while (i <= mid && j <= right) {
             // 带等号保证归并排序的稳定性
             temp[index++] = array[i] <= array[j] ? array[i++] : array[j++];
