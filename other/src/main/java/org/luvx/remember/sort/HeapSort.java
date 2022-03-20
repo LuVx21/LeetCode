@@ -29,9 +29,7 @@ public class HeapSort {
     /**
      * 调整大顶堆:写法1
      *
-     * @param array  待排序数组
-     * @param i
-     * @param length
+     * @param array 待排序数组
      */
     private static void adjustHeap0(int[] array, int i, int length) {
         int parent = array[i];
@@ -39,12 +37,11 @@ public class HeapSort {
             if (left + 1 < length && array[left] < array[left + 1]) {
                 left++;
             }
-            if (array[left] > parent) {
-                array[i] = array[left];
-                i = left;
-            } else {
+            if (parent <= array[left]) {
                 break;
             }
+            array[i] = array[left];
+            i = left;
         }
         array[i] = parent;
     }
@@ -52,19 +49,18 @@ public class HeapSort {
     /**
      * 调整大顶堆:写法2(本质和1相同,但容易理解)
      *
-     * @param array  待排序数组
-     * @param i
-     * @param length
+     * @param array 待排序数组
      */
     private static void adjustHeap(int[] array, int i, int length) {
         int parent = i;
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
+        int left = 2 * i + 1, right = 2 * i + 2;
 
-        if (left < length && array[left] > array[parent])
+        if (left < length && array[left] > array[parent]) {
             parent = left;
-        if (right < length && array[right] > array[parent])
+        }
+        if (right < length && array[right] > array[parent]) {
             parent = right;
+        }
 
         if (parent != i) {
             ArrayUtils.swap(array, i, parent);
