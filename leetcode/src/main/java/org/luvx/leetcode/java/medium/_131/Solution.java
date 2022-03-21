@@ -1,4 +1,5 @@
-package org.luvx.leetcode.java.medium._131;/*
+package org.luvx.leetcode.java.medium._131;
+/*
  * @lc app=leetcode.cn id=131 lang=java
  *
  * [131] 分割回文串
