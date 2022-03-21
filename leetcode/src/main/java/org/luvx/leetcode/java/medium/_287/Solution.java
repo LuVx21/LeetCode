@@ -19,15 +19,18 @@ class Solution {
      * 题解: https://leetcode-cn.com/problems/find-the-duplicate-number/comments/33529
      */
     public int findDuplicate(int[] nums) {
-        int res = 0;
-        for (int fast = 0; fast == 0 || res != fast; ) {
-            res = nums[res];
+        int slow = 0, fast = 0;
+        do {
+            slow = nums[slow];
             fast = nums[nums[fast]];
+        } while (slow != fast);
+
+        slow = 0;
+        while (slow != fast) {
+            slow = nums[slow];
+            fast = nums[fast];
         }
-        for (int i = 0; res != i; i = nums[i]) {
-            res = nums[res];
-        }
-        return res;
+        return slow;
     }
 
     public int findDuplicate1(int[] nums) {
