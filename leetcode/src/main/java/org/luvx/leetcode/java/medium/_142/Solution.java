@@ -1,23 +1,18 @@
+package org.luvx.leetcode.java.medium._142;
+
+import org.luvx.leetcode.ListNode;
+
 /*
  * @lc app=leetcode.cn id=142 lang=java
  *
  * [142] 环形链表 II
  */
 
-/**
- * Definition for singly-linked list.
- * <pre>
- * class ListNode {
- *     int      val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
- * }
- * </pre>
- * }
- */
+// @lc code=start
+
+import java.util.HashSet;
+import java.util.Set;
+
 public class Solution {
     /**
      * 1->2->3->4
@@ -99,4 +94,5 @@ public class Solution {
         return null;
     }
 }
+// @lc code=end
 
