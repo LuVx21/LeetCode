@@ -9,6 +9,7 @@ package org.luvx.leetcode.java.medium._3;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 class Solution {
@@ -63,8 +64,8 @@ class Solution {
 
     public static void main(String[] args) {
         final Solution exec = new Solution();
-        System.out.println(
-                exec.lengthOfLongestSubstring("dvdf")
+        List.of("pwwkew", "dvdf").forEach(s ->
+                System.out.println(exec.lengthOfLongestSubstring(s))
         );
     }
 }
