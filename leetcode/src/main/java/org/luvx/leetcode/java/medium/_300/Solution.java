@@ -18,7 +18,7 @@ class Solution {
         int max = 0;
         for (int num : nums) {
             int left = 0, right = max;
-            while (left < right) {
+            while (left < right) {// 此处的二分查找, 找不到也定位到了 num 在有序 tails 中的位置
                 int mid = left + (right - left) / 2;
                 if (tails[mid] < num) {
                     left = mid + 1;

@@ -7,9 +7,8 @@ package org.luvx.leetcode.java.medium._15;
 
 // @lc code=start
 
-
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,7 +19,7 @@ class Solution {
      */
     public List<List<Integer>> threeSum(int[] nums) {
         if (nums == null || nums.length < 3) {
-            return new ArrayList<>(0);
+            return Collections.emptyList();
         }
 
         Arrays.sort(nums);
