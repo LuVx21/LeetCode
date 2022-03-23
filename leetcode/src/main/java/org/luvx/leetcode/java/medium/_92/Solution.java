@@ -1,31 +1,26 @@
+package org.luvx.leetcode.java.medium._92;
 /*
  * @lc app=leetcode.cn id=92 lang=java
  *
  * [92] 反转链表 II
  */
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
+
+import org.luvx.leetcode.ListNode;
+
+// @lc code=start
 class Solution {
-    public ListNode reverseBetween(ListNode head, int m, int n) {
-        if (n == m) {
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        if (right == left) {
             return head;
         }
-        ListNode temp = new ListNode(0);
+        ListNode temp = new ListNode(0), pre = temp;
         temp.next = head;
-        ListNode pre = temp;
-        for (int i = 1; i < m; i++) {
+        for (int i = 1; i < left; i++) {
             pre = pre.next;
         }
 
-        ListNode current = pre.next;
-        ListNode next = current.next;
-        for (int i = 0; i < n - m; i++) {
+        ListNode current = pre.next, next = current.next;
+        for (int i = 0; i < right - left; i++) {
             ListNode nextNext = next.next;
             current.next = nextNext;
             next.next = pre.next;
@@ -81,3 +76,5 @@ class Solution {
         return array;
     }
 }
+// @lc code=end
+

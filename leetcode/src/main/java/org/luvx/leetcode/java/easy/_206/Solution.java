@@ -9,17 +9,6 @@ import org.luvx.leetcode.ListNode;
  */
 
 // @lc code=start
-
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- * int val;
- * ListNode next;
- * ListNode() {}
- * ListNode(int val) { this.val = val; }
- * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
 class Solution {
     /**
      * 反转链表 迭代方式
@@ -83,8 +72,9 @@ class Solution {
     }
 
     private ListNode reverseListInt(ListNode head, ListNode newHead) {
-        if (head == null)
+        if (head == null) {
             return newHead;
+        }
         ListNode next = head.next;
         head.next = newHead;
         return reverseListInt(next, head);
