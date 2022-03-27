@@ -8,7 +8,9 @@ package org.luvx.leetcode.java.medium._215;
 // @lc code=start
 class Solution {
     /**
+     * 数组中第 K 大的元素
      * 1. 最大堆
+     * 2. 快排
      * <pre>
      *     [3,2,1,5,6,4]-2 -> 5
      *     [3,2,3,1,2,4,5,5,6]-4 -> 4
