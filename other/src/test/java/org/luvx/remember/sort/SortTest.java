@@ -1,41 +1,41 @@
 package org.luvx.remember.sort;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Test;
 
-import java.util.Arrays;
-
 public class SortTest {
-    int[] array = {5, 4, 3, 2, 1};
+    int[]       array  = {5, 4, 3, 2, 1};
+    int[]       array1 = {3, 2, 1, 6, 5, 7, 4};
+    List<int[]> list   = List.of(array, array1);
 
     @Test
     public void test0() {
-        BubbleSort.sort0(array);
+        BubbleSort.sort0(this.array);
     }
 
     @Test
     public void test1() {
-        QuickSort.sort(array, 0, array.length - 1);
+        list.forEach(array -> {
+            QuickSort.sort(array, 0, array.length - 1);
+        });
     }
 
     @Test
     public void test2() {
-        SimpleSort.sort5(array);
     }
 
     @Test
     public void test3() {
-        int i = 10;
-        a(i++);
-        System.out.println(i);
     }
 
-    private void a(int i) {
-        System.out.println(i);
-    }
 
     @After
     public void after() {
-        System.out.println(Arrays.toString(array));
+        list.forEach(array -> {
+            System.out.println(Arrays.toString(array));
+        });
     }
 }
