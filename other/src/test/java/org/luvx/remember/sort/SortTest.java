@@ -24,13 +24,19 @@ public class SortTest {
     }
 
     @Test
-    public void test2() {
+    public void mergeSortTest() {
+        list.forEach(MergeSort::sort);
     }
 
     @Test
-    public void test3() {
+    public void heapSortTest() {
+        list.forEach(HeapSort::sort);
     }
 
+    @Test
+    public void radixSortTest() {
+        list.forEach(RadixSort::sort);
+    }
 
     @After
     public void after() {

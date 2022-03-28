@@ -1,7 +1,5 @@
 package org.luvx.remember.sort;
 
-import java.util.Arrays;
-
 import com.google.common.primitives.Ints;
 
 /**
@@ -65,11 +63,5 @@ public class RadixSort {
 
         // 或使用jdk
         // return (num / (int) Math.pow(10, i)) % 10;
-    }
-
-    public static void main(String[] args) {
-        int[] array = {103, 2, 55, 30, 43};
-        sort(array);
-        System.out.println(Arrays.toString(array));
     }
 }

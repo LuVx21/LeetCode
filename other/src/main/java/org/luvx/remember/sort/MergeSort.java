@@ -5,7 +5,7 @@ package org.luvx.remember.sort;
  */
 public class MergeSort {
 
-    public static void mergeSort(int[] array) {
+    public static void sort(int[] array) {
         MergeSortRecursion(array, 0, array.length - 1);
         // MergeSortIteration(array, array.length);
     }

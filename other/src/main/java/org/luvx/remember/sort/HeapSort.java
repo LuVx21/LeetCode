@@ -14,20 +14,20 @@ public class HeapSort {
      *
      * @param array 待排序数组
      */
-    public static void sort0(int[] array) {
+    public static void sort(int[] array) {
         int length = array.length;
         for (int i = length / 2 - 1; i >= 0; i--) {
             adjustHeap(array, i, length);
         }
 
-        for (int j = length - 1; j > 0; j--) {
-            ArrayUtils.swap(array, 0, j);
-            adjustHeap(array, 0, j);
+        for (int i = length - 1; i > 0; i--) {
+            ArrayUtils.swap(array, 0, i);
+            adjustHeap(array, 0, i);
         }
     }
 
     /**
-     * 调整大顶堆:写法1
+     * 调整大顶堆:写法1(有问题)
      *
      * @param array 待排序数组
      */
