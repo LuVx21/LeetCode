@@ -1,6 +1,6 @@
 package org.luvx.leetcode.java.easy._637;
 
-import org.luvx.leetcode.TreeNode
+import org.luvx.leetcode.tree.TreeNode
 import org.luvx.leetcode.out
 import kotlin.test.BeforeTest
 import kotlin.test.Test

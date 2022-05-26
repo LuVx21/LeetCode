@@ -1,6 +1,6 @@
 package org.luvx.question.link;
 
-import org.luvx.leetcode.ListNode;
+import org.luvx.leetcode.link.ListNode;
 
 import java.util.LinkedList;
 import java.util.Stack;

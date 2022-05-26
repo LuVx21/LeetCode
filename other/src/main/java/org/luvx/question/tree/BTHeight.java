@@ -3,7 +3,7 @@ package org.luvx.question.tree;
 
 import java.util.LinkedList;
 
-import org.luvx.leetcode.TreeNode;
+import org.luvx.leetcode.tree.TreeNode;
 
 /**
  * 实现计算二叉树的高

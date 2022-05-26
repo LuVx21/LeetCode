@@ -1,6 +1,6 @@
 package org.luvx.remember.tree;
 
-import org.luvx.leetcode.TreeNode;
+import org.luvx.leetcode.tree.TreeNode;
 
 /**
  * 二叉搜索树

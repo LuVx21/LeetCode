@@ -5,7 +5,7 @@ package org.luvx.leetcode.java.medium._92;
  * [92] 反转链表 II
  */
 
-import org.luvx.leetcode.ListNode;
+import org.luvx.leetcode.link.ListNode;
 
 // @lc code=start
 class Solution {

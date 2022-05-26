@@ -1,6 +1,6 @@
 package org.luvx.leetcode.java.easy._160;
 
-import org.luvx.leetcode.ListNode;
+import org.luvx.leetcode.link.ListNode;
 // @lc code=start
 /*
  * @lc app=leetcode.cn id=160 lang=java

@@ -1,4 +1,6 @@
-package org.luvx.leetcode;
+package org.luvx.leetcode.util;
+
+import org.luvx.leetcode.link.ListNode;
 
 import lombok.extern.slf4j.Slf4j;
 

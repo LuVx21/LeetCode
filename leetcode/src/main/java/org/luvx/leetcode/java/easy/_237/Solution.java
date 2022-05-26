@@ -5,7 +5,7 @@ package org.luvx.leetcode.java.easy._237;
  * [237] 删除链表中的节点
  */
 
-import org.luvx.leetcode.ListNode;
+import org.luvx.leetcode.link.ListNode;
 
 // @lc code=start
 class Solution {

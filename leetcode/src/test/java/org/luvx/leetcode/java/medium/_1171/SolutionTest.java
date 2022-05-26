@@ -1,8 +1,8 @@
 package org.luvx.leetcode.java.medium._1171;
 
 import org.junit.Test;
-import org.luvx.leetcode.ListNode;
-import org.luvx.leetcode.Utils;
+import org.luvx.leetcode.link.ListNode;
+import org.luvx.leetcode.util.Utils;
 
 public class SolutionTest {
     @Test

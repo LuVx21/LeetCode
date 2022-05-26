@@ -1,7 +1,7 @@
 package org.luvx.question.link;
 
-import org.luvx.leetcode.ListNode;
-import org.luvx.leetcode.Utils;
+import org.luvx.leetcode.link.ListNode;
+import org.luvx.leetcode.util.Utils;
 
 /**
  * 反转链表的前 K 个节点

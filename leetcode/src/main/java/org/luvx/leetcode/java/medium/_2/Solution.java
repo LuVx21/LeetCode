@@ -1,6 +1,6 @@
 package org.luvx.leetcode.java.medium._2;
 
-import org.luvx.leetcode.ListNode;
+import org.luvx.leetcode.link.ListNode;
 
 /*
  * @lc app=leetcode.cn id=2 lang=java

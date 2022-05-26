@@ -5,8 +5,8 @@ package org.luvx.leetcode.java.medium._143;
  * [143] 重排链表
  */
 
-import org.luvx.leetcode.ListNode;
-import org.luvx.leetcode.Utils;
+import org.luvx.leetcode.link.ListNode;
+import org.luvx.leetcode.util.Utils;
 
 // @lc code=start
 class Solution {

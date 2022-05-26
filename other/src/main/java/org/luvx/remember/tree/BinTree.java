@@ -1,6 +1,6 @@
 package org.luvx.remember.tree;
 
-import org.luvx.leetcode.TreeNode;
+import org.luvx.leetcode.tree.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.LinkedList;

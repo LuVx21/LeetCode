@@ -1,6 +1,7 @@
-package org.luvx.leetcode;
+package org.luvx.leetcode.link;
 
 import org.junit.jupiter.api.Test;
+import org.luvx.leetcode.util.Utils;
 
 import lombok.extern.slf4j.Slf4j;
 

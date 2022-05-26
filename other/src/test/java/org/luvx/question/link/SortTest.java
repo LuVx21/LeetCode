@@ -1,8 +1,8 @@
 package org.luvx.question.link;
 
 import org.junit.Test;
-import org.luvx.leetcode.ListNode;
-import org.luvx.leetcode.Utils;
+import org.luvx.leetcode.link.ListNode;
+import org.luvx.leetcode.util.Utils;
 
 public class SortTest {
 

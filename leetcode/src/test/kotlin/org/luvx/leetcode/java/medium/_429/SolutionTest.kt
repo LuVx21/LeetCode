@@ -1,6 +1,6 @@
 package org.luvx.leetcode.java.medium._429;
 
-import org.luvx.leetcode.Node
+import org.luvx.leetcode.tree.Node
 import org.luvx.leetcode.out
 import kotlin.test.BeforeTest
 import kotlin.test.Test

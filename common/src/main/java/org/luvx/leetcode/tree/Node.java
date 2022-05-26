@@ -1,4 +1,4 @@
-package org.luvx.leetcode;
+package org.luvx.leetcode.tree;
 
 import java.util.List;
 

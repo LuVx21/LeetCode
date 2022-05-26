@@ -1,6 +1,6 @@
 package org.luvx.leetcode.java.medium._144;
 
-import org.luvx.leetcode.TreeNode;
+import org.luvx.leetcode.tree.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;

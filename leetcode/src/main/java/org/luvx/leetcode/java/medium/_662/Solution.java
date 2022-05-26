@@ -5,7 +5,7 @@ package org.luvx.leetcode.java.medium._662;
  * [662] 二叉树最大宽度
  */
 
-import org.luvx.leetcode.TreeNode;
+import org.luvx.leetcode.tree.TreeNode;
 // @lc code=start
 import java.util.AbstractMap.SimpleEntry;
 import java.util.HashMap;

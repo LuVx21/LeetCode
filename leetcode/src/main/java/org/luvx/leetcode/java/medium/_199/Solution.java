@@ -5,7 +5,7 @@ package org.luvx.leetcode.java.medium._199;
  * [199] 二叉树的右视图
  */
 
-import org.luvx.leetcode.TreeNode;
+import org.luvx.leetcode.tree.TreeNode;
 
 // @lc code=start
 

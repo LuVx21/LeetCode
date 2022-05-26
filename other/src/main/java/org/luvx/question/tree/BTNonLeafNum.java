@@ -2,7 +2,7 @@ package org.luvx.question.tree;
 
 import java.util.Stack;
 
-import org.luvx.leetcode.TreeNode;
+import org.luvx.leetcode.tree.TreeNode;
 
 public class BTNonLeafNum {
     /**

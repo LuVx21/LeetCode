@@ -1,9 +1,9 @@
-package org.luvx.leetcode.tree;
+package org.luvx.leetcode.util;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.luvx.leetcode.TreeNode;
+import org.luvx.leetcode.tree.TreeNode;
 
 public class TreeUtils {
 

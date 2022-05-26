@@ -1,6 +1,6 @@
 package org.luvx.leetcode.java.medium._129;
 
-import org.luvx.leetcode.TreeNode;
+import org.luvx.leetcode.tree.TreeNode;
 
 // @lc code=start
 import java.util.LinkedList;

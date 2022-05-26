@@ -1,6 +1,6 @@
 package org.luvx.leetcode.java.easy._112;
 
-import org.luvx.leetcode.TreeNode;
+import org.luvx.leetcode.tree.TreeNode;
 
 import java.util.Stack;
 // @lc code=start

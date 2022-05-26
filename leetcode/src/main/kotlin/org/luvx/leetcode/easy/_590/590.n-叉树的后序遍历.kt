@@ -1,6 +1,6 @@
 package org.luvx.leetcode.easy._590
 
-import org.luvx.leetcode.Node
+import org.luvx.leetcode.tree.Node
 
 /*
  * @lc app=leetcode.cn id=590 lang=kotlin

@@ -1,6 +1,6 @@
 package org.luvx.leetcode.java.medium._817;
 
-import org.luvx.leetcode.ListNode;
+import org.luvx.leetcode.link.ListNode;
 
 // @lc code=start
 import java.util.HashSet;

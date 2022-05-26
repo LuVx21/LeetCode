@@ -1,4 +1,4 @@
-package org.luvx.leetcode;
+package org.luvx.leetcode.link;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

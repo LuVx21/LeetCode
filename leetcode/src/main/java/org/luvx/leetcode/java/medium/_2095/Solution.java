@@ -5,8 +5,8 @@ package org.luvx.leetcode.java.medium._2095;
  * [2095] 删除链表的中间节点
  */
 
-import org.luvx.leetcode.ListNode;
-import org.luvx.leetcode.Utils;
+import org.luvx.leetcode.link.ListNode;
+import org.luvx.leetcode.util.Utils;
 
 // @lc code=start
 class Solution {
