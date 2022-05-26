@@ -11,10 +11,21 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ListNode {
+    public ListNode pre;
     public int      val;
     public ListNode next;
 
     public ListNode(int x) {
         val = x;
+    }
+
+    public ListNode(ListNode pre, int val) {
+        this.pre = pre;
+        this.val = val;
+    }
+
+    public ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
     }
 }

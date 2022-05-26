@@ -17,4 +17,10 @@ public class UtilsTest {
         // System.out.println(head.val);
         // printLink(head);
     }
+
+    @Test
+    void m1() {
+        ListNode head = Utils.initLinked3(1, 2, 3, 4, 5, 6, 7);
+        Utils.printLink1(head);
+    }
 }

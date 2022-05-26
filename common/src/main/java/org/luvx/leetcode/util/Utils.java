@@ -36,6 +36,18 @@ public class Utils {
         return ns[0];
     }
 
+    public static ListNode initLinked3(int... array) {
+        if (array.length == 0) {
+            throw new RuntimeException();
+        }
+        ListNode head = new ListNode(null, array[0], null), cur = head;
+        for (int i = 1; i < array.length; i++) {
+            cur.next = new ListNode(cur, array[i], null);
+            cur = cur.next;
+        }
+        return head;
+    }
+
     public static void printLink(ListNode... heads) {
         for (ListNode head : heads) {
             while (head != null) {
@@ -43,6 +55,19 @@ public class Utils {
                 head = head.next;
             }
             System.out.println("\n--------------");
+        }
+    }
+
+    public static void printLink1(ListNode head) {
+        while (head != null) {
+            String s = "%s->%s->%s";
+            s = String.format(s,
+                    head.pre == null ? "null" : head.pre.val,
+                    head.val,
+                    head.next == null ? "null" : head.next.val
+            );
+            System.out.println(s);
+            head = head.next;
         }
     }
 }
