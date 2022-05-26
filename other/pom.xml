@@ -6,8 +6,7 @@
     <parent>
         <groupId>org.luvx</groupId>
         <artifactId>foobar</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <version>0.1</version>
     </parent>
 
     <artifactId>other</artifactId>
@@ -18,17 +17,16 @@
         <dependency>
             <groupId>org.luvx</groupId>
             <artifactId>common</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.11</version>
+            <groupId>org.luvx</groupId>
+            <artifactId>coding-common</artifactId>
+            <version>0.1</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.78</version>
+            <version>2.0.3</version>
         </dependency>
     </dependencies>
 </project>

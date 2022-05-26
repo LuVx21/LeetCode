@@ -5,9 +5,8 @@
 
     <parent>
         <groupId>org.luvx</groupId>
-        <artifactId>coding-kotlin-parent</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
-        <relativePath/>
+        <artifactId>coding-parent-kotlin</artifactId>
+        <version>0.1</version>
     </parent>
 
     <artifactId>foobar</artifactId>
@@ -28,6 +27,16 @@
 
     <dependencies>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.luvx</groupId>
+                <artifactId>common</artifactId>
+                <version>0.1</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
