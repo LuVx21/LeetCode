@@ -9,7 +9,6 @@ package org.luvx.leetcode.java.medium._560;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Stream;
 
 class Solution {
     /**
@@ -28,14 +27,6 @@ class Solution {
             map.put(sum, map.getOrDefault(sum, 0) + 1);
         }
         return result;
-    }
-
-    public static void main(String[] args) {
-        int[] array = {1, 2, 3, 0, 3};
-        Solution exec = new Solution();
-        Stream.of(3)
-                .map(k -> exec.subarraySum(array, k))
-                .forEach(System.out::println);
     }
 }
 // @lc code=end

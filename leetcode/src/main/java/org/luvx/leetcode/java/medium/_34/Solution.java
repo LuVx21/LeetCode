@@ -7,9 +7,6 @@ package org.luvx.leetcode.java.medium._34;
 
 // @lc code=start
 
-import java.util.Arrays;
-import java.util.stream.Stream;
-
 class Solution {
     /**
      * 5,7,7,8,8,10 - 8 -> [3,4]
@@ -45,15 +42,6 @@ class Solution {
         }
         result[1] = end;
         return result;
-    }
-
-    public static void main(String[] args) {
-        int[] array = {5, 7, 7, 8, 8, 9, 10};
-        Solution exec = new Solution();
-        Stream.of(8, 9, 11)
-                .map(t -> exec.searchRange(array, t))
-                .map(Arrays::toString)
-                .forEach(System.out::println);
     }
 }
 // @lc code=end
