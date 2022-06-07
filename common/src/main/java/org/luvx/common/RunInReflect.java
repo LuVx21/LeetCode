@@ -3,6 +3,7 @@ package org.luvx.common;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -11,10 +12,20 @@ import org.apache.commons.lang3.ArrayUtils;
 import com.google.common.collect.Lists;
 
 public class RunInReflect {
+
     public static List<Object> exec(String className, String methodName, Object... args) {
+        Class<?> clazz;
+        try {
+            clazz = Class.forName(className);
+        } catch (Exception e) {
+            return Collections.emptyList();
+        }
+        return exec(clazz, methodName, args);
+    }
+
+    public static List<Object> exec(Class<?> clazz, String methodName, Object... args) {
         List<Object> result = Lists.newArrayList();
         try {
-            Class<?> clazz = Class.forName(className);
             Constructor<?> constructor = clazz.getDeclaredConstructor();
             constructor.setAccessible(true);
             Object o = constructor.newInstance();

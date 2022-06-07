@@ -1,4 +1,4 @@
-package org.luvx.offer.easy._62;
+package org.luvx.offer._62;
 
 import java.util.ArrayList;
 import java.util.List;
