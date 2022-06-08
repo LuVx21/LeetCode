@@ -3,8 +3,17 @@ package org.luvx.offer.array;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
+import org.luvx.common.util.Runs;
+
+import lombok.val;
 
 class ArrayTest {
+    @Test
+    void m12() {
+        val exec = new Offer12();
+        // Runs.runWithTime(() -> exec.printOneToNthDigits1(3));
+        Runs.runWithTime(() -> exec.printOneToNthDigits2(3));
+    }
 
     @Test
     void m51() {
