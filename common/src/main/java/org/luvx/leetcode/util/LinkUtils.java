@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
  * @author Ren, Xie
  */
 @Slf4j
-public class Utils {
+public class LinkUtils {
     public static ListNode initLinked(int... array) {
         ListNode head = null, temp = null;
         for (int i = 0; i < array.length; i++) {

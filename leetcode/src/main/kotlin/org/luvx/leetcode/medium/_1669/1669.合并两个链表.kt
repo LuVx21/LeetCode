@@ -1,7 +1,7 @@
 package org.luvx.leetcode.medium._1669
 
 import org.luvx.leetcode.link.ListNode
-import org.luvx.leetcode.util.Utils
+import org.luvx.leetcode.util.LinkUtils
 
 /*
  * @lc app=leetcode.cn id=1669 lang=kotlin
@@ -53,15 +53,15 @@ class Solution {
 
 fun main() {
     val exec = Solution()
-    var list1 = Utils.initLinked(0, 1, 2, 3, 4, 5)
-    var list2 = Utils.initLinked(1000000, 1000001, 1000002)
-    Utils.printLink(
+    var list1 = LinkUtils.initLinked(0, 1, 2, 3, 4, 5)
+    var list2 = LinkUtils.initLinked(1000000, 1000001, 1000002)
+    LinkUtils.printLink(
         exec.mergeInBetween(list1, 3, 4, list2)
     )
 
-    list1 = Utils.initLinked(0, 1, 2, 3, 4, 5, 6)
-    list2 = Utils.initLinked(1000000, 1000001, 1000002, 1000003, 1000004)
-    Utils.printLink(
+    list1 = LinkUtils.initLinked(0, 1, 2, 3, 4, 5, 6)
+    list2 = LinkUtils.initLinked(1000000, 1000001, 1000002, 1000003, 1000004)
+    LinkUtils.printLink(
         exec.mergeInBetween(list1, 2, 5, list2)
     )
 }

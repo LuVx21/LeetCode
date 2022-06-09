@@ -6,7 +6,7 @@ package org.luvx.leetcode.java.medium._143;
  */
 
 import org.luvx.leetcode.link.ListNode;
-import org.luvx.leetcode.util.Utils;
+import org.luvx.leetcode.util.LinkUtils;
 
 // @lc code=start
 class Solution {
@@ -98,9 +98,9 @@ class Solution {
 
     public static void main(String[] args) {
         Solution exec = new Solution();
-        ListNode head = Utils.initLinked(1, 2, 3, 4, 5, 6);
+        ListNode head = LinkUtils.initLinked(1, 2, 3, 4, 5, 6);
         exec.reorderList(head);
-        Utils.printLink(head);
+        LinkUtils.printLink(head);
     }
 }
 // @lc code=end

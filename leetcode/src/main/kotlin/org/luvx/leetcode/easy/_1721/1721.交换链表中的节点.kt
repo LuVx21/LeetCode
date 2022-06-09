@@ -1,8 +1,8 @@
 package org.luvx.leetcode.easy._1721
 
 import org.luvx.leetcode.link.ListNode
-import org.luvx.leetcode.util.Utils.initLinked
-import org.luvx.leetcode.util.Utils.printLink
+import org.luvx.leetcode.util.LinkUtils.initLinked
+import org.luvx.leetcode.util.LinkUtils.printLink
 
 /*
  * @lc app=leetcode.cn id=1721 lang=kotlin

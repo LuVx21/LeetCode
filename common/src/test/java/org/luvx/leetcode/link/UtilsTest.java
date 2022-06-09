@@ -1,7 +1,7 @@
 package org.luvx.leetcode.link;
 
 import org.junit.jupiter.api.Test;
-import org.luvx.leetcode.util.Utils;
+import org.luvx.leetcode.util.LinkUtils;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -11,7 +11,7 @@ public class UtilsTest {
     public void main() {
         log.info("test:{}", "haha");
         int[] a = {1, 2, 3, 4, 5, 6, 7};
-        ListNode head = Utils.initLinked(a);
+        ListNode head = LinkUtils.initLinked(a);
         // TreeNode aa = Utils.sortedListToBST(head);
         // System.out.println(aa);
         // System.out.println(head.val);
@@ -20,7 +20,7 @@ public class UtilsTest {
 
     @Test
     void m1() {
-        ListNode head = Utils.initLinked3(1, 2, 3, 4, 5, 6, 7);
-        Utils.printLink1(head);
+        ListNode head = LinkUtils.initLinked3(1, 2, 3, 4, 5, 6, 7);
+        LinkUtils.printLink1(head);
     }
 }

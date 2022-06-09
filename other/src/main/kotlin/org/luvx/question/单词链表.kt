@@ -1,7 +1,7 @@
 package org.luvx.question
 
 import org.luvx.leetcode.link.ListNode
-import org.luvx.leetcode.util.Utils
+import org.luvx.leetcode.util.LinkUtils
 import java.util.*
 
 /**
@@ -93,12 +93,12 @@ fun cnt(head: ListNode?): Int {
 }
 
 fun main() {
-    val l1 = Utils.initLinked(1, 2, 3, 4, 5, 6, 7)
-    val l2 = Utils.initLinked(11, 12, 13, 14, 15, 16, 17)
+    val l1 = LinkUtils.initLinked(1, 2, 3, 4, 5, 6, 7)
+    val l2 = LinkUtils.initLinked(11, 12, 13, 14, 15, 16, 17)
     val next = ListNode(8, null)
     l1.next = next
     l2.next = next
-    Utils.printLink(
+    LinkUtils.printLink(
         wordLink2(l1, l2)
     )
 }

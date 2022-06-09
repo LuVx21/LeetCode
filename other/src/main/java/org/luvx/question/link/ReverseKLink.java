@@ -1,7 +1,7 @@
 package org.luvx.question.link;
 
 import org.luvx.leetcode.link.ListNode;
-import org.luvx.leetcode.util.Utils;
+import org.luvx.leetcode.util.LinkUtils;
 
 /**
  * 反转链表的前 K 个节点
@@ -29,8 +29,8 @@ public class ReverseKLink {
 
     public static void main(String[] args) {
         ReverseKLink exec = new ReverseKLink();
-        ListNode head = Utils.initLinked(1, 2, 3, 4, 5, 6);
+        ListNode head = LinkUtils.initLinked(1, 2, 3, 4, 5, 6);
         head = exec.reverseK(head, 3);
-        Utils.printLink(head);
+        LinkUtils.printLink(head);
     }
 }

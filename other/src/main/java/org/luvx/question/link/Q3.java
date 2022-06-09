@@ -1,7 +1,7 @@
 package org.luvx.question.link;
 
 import org.luvx.leetcode.link.ListNode;
-import org.luvx.leetcode.util.Utils;
+import org.luvx.leetcode.util.LinkUtils;
 
 /**
  * 链表去掉奇数位节点
@@ -58,15 +58,15 @@ public class Q3 {
 
     public static void main(String[] args) {
         int[] array = {1, 2, 3};
-        ListNode head = Utils.initLinked3(array);
+        ListNode head = LinkUtils.initLinked3(array);
         // Utils.printLink(head);
         // head = removeSingleNode(head);
         // Utils.printLink(head);
 
 
-        head = Utils.initLinked(array);
-        Utils.printLink(head);
+        head = LinkUtils.initLinked(array);
+        LinkUtils.printLink(head);
         head = removeSingleNode1(head);
-        Utils.printLink(head);
+        LinkUtils.printLink(head);
     }
 }

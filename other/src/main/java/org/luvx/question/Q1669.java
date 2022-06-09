@@ -1,7 +1,7 @@
 package org.luvx.question;
 
 import org.luvx.leetcode.link.ListNode;
-import org.luvx.leetcode.util.Utils;
+import org.luvx.leetcode.util.LinkUtils;
 
 public class Q1669 {
     /**
@@ -39,9 +39,9 @@ public class Q1669 {
 
     public static void main(String[] args) {
         final Q1669 exec = new Q1669();
-        ListNode list1 = Utils.initLinked(0, 1, 2, 3, 4, 5);
-        ListNode list2 = Utils.initLinked(200, 201, 202);
-        Utils.printLink(
+        ListNode list1 = LinkUtils.initLinked(0, 1, 2, 3, 4, 5);
+        ListNode list2 = LinkUtils.initLinked(200, 201, 202);
+        LinkUtils.printLink(
                 // exec.mergeInBetween(list1, 3, 4, list2)
                 // , exec.mergeInBetween(list1, 0, 4, list2)
                 exec.mergeInBetween(list1, 0, 5, list2)
