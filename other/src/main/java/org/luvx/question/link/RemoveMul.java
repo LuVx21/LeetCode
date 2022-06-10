@@ -1,5 +1,7 @@
 package org.luvx.question.link;
 
+import java.util.stream.Stream;
+
 import org.luvx.leetcode.link.ListNode;
 import org.luvx.leetcode.util.LinkUtils;
 
@@ -29,30 +31,35 @@ public class RemoveMul {
 
     // 不保留重复元素
     public static ListNode removeMul1(ListNode head) {
-        while (head != null && head.val == head.next.val) {
-            head = head.next.next;
+        while (head != null) {
+            ListNode cur = head.next;
+            if (cur == null || head.val != cur.val) {
+                break;
+            }
+            for (; cur != null && cur.val == head.val; cur = cur.next) {
+                head = cur;
+            }
+            head = head.next;
+        }
+        if (head == null) {
+            return null;
         }
 
-        ListNode before = head;
-        ListNode current = before.next;
-        ListNode next;
-        boolean flag;
-
-        while (current != null) {
-            next = current.next;
-            flag = false;
-            while (next != null && current.val == next.val) {
-                before.next = next;
-                current = next;
-                next = current.next;
+        ListNode pre = head, cur = head.next;
+        while (cur != null) {
+            ListNode next = cur.next;
+            boolean flag = false;
+            while (next != null && cur.val == next.val) {
+                pre.next = cur = next;
+                next = cur.next;
                 flag = true;
             }
             if (flag) {
-                before.next = next;
+                pre.next = next;
             } else {
-                before = current;
+                pre = cur;
             }
-            current = next;
+            cur = next;
         }
         return head;
     }
@@ -62,11 +69,13 @@ public class RemoveMul {
     }
 
     public static void main(String[] args) {
-        // 1 -> 1 -> 1 -> 3 -> 4 -> 4 -> 5
-        ListNode head = LinkUtils.initLinked(1, 1, 1, 3, 4, 4, 5);
-        LinkUtils.printLink(head);
-        head = removeMul1(head);
-        // 3 5
-        LinkUtils.printLink(head);
+        Stream.of(
+                        LinkUtils.initLinked(1, 1, 1, 3, 4, 4, 5),
+                        LinkUtils.initLinked(1, 1, 1, 3, 3, 4, 4, 5),
+                        LinkUtils.initLinked(1, 1, 1, 1, 3, 3, 4, 4, 5)
+                )
+                .peek(LinkUtils::printLink)
+                .map(RemoveMul::removeMul1)
+                .forEachOrdered(LinkUtils::printLink);
     }
 }
