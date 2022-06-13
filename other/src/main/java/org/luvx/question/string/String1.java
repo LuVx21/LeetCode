@@ -1,6 +1,6 @@
 package org.luvx.question.string;
 
-import com.google.common.collect.Lists;
+import org.luvx.common.more.MoreRuns;
 
 public class String1 {
     /**
@@ -26,11 +26,6 @@ public class String1 {
     }
 
     public static void main(String[] args) {
-        final String1 exec = new String1();
-        Lists.newArrayList(
-                "bbcb", "abcdefffg", "aaaaa"
-        ).stream()
-                .map(exec::filter)
-                .forEach(System.out::println);
+        MoreRuns.run(String1.class, "filter", "bbcb", "abcdefffg", "aaaaa");
     }
 }

@@ -1,4 +1,6 @@
-package org.luvx.question;
+package org.luvx.question.string;
+
+import org.luvx.common.more.MoreRuns;
 
 /**
  * string -> int
@@ -7,11 +9,6 @@ package org.luvx.question;
  * int -> char: Character.forDigit(i, 10);
  */
 public class StringToInt {
-
-    /**
-     * @param str
-     * @return
-     */
     public static int parseInt(String str) {
         char[] chars = str.toCharArray();
         int length = chars.length;
@@ -32,9 +29,6 @@ public class StringToInt {
     }
 
     public static void main(String[] args) {
-        System.out.println(parseInt("123"));
-        System.out.println(parseInt("+123"));
-        System.out.println(parseInt("-123"));
-        System.out.println(parseInt("00123"));
+        MoreRuns.run(StringToInt.class, "parseInt", "123", "+123", "-123", "00123");
     }
 }

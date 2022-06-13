@@ -2,9 +2,12 @@ package org.luvx.remember;
 
 import java.util.*;
 
+import lombok.Setter;
+
 public class LFUCache {
     static class Value implements Comparable<Value> {    //定义一个静态内部类，主要是用于统计命中数
         Object key;
+        @Setter
         Object val;
         int hitCount;
 
@@ -12,10 +15,6 @@ public class LFUCache {
             this.key = key;
             this.val = v;
             this.hitCount = 1;  //第一次进入设置命中为1
-        }
-
-        public void setVal(Object obj) {
-            this.val = obj;
         }
 
         public void countInc() {

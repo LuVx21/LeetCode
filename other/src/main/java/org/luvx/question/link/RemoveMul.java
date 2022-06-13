@@ -1,5 +1,7 @@
 package org.luvx.question.link;
 
+import static org.luvx.leetcode.util.LinkUtils.initLinked;
+
 import java.util.stream.Stream;
 
 import org.luvx.leetcode.link.ListNode;
@@ -70,9 +72,9 @@ public class RemoveMul {
 
     public static void main(String[] args) {
         Stream.of(
-                        LinkUtils.initLinked(1, 1, 1, 3, 4, 4, 5),
-                        LinkUtils.initLinked(1, 1, 1, 3, 3, 4, 4, 5),
-                        LinkUtils.initLinked(1, 1, 1, 1, 3, 3, 4, 4, 5)
+                        initLinked(1, 1, 1, 3, 4, 4, 5),
+                        initLinked(1, 1, 1, 3, 3, 4, 4, 5),
+                        initLinked(1, 1, 1, 1, 3, 3, 4, 4, 5)
                 )
                 .peek(LinkUtils::printLink)
                 .map(RemoveMul::removeMul1)
