@@ -28,4 +28,13 @@ public class EasyTest extends BaseTest {
         );
         exec(559, "maxDepth", root);
     }
+
+    @Test
+    void m2129() {
+        exec(2129, "capitalizeTitle",
+                "capiTalIze tHe titLe",
+                "First leTTeR of EACH Word",
+                "i lOve leetcode"
+        );
+    }
 }
