@@ -7,7 +7,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Queue;
 
-import com.google.common.collect.Lists;
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONObject;
 import com.google.common.collect.Maps;
 
 /**
@@ -110,7 +111,12 @@ public class JsonAbbr {
                 });
             } else if (value instanceof List) {
                 List temp = (List) value;
-                if (!temp.isEmpty() && temp.get(0) instanceof Map) {
+                if (temp.isEmpty()) {
+                    continue;
+                }
+                Object first = temp.get(0);
+                // 数组内元素可能不一致
+                if (first instanceof Map) {
                     List<Map<String, Object>> list = (List<Map<String, Object>>) value;
                     for (int i = 0; i < list.size(); i++) {
                         int finalI = i;
@@ -130,24 +136,39 @@ public class JsonAbbr {
     public static void main(String[] args) {
         JsonAbbr exec = new JsonAbbr();
 
-        Map<String, Object> map = Map.of(
-                "a", 1,
-                "b", 2,
-                "c", Map.of(
-                        "d", 3,
-                        "e", 4),
-                "f", Map.of(
-                        "g", 5,
-                        "h", Map.of(
-                                "i", 6,
-                                "j", 7)),
-                "k", List.of(Map.of(
-                        "l", 8,
-                        "m", 9), Map.of(
-                        "n", 10))
-        );
+        String json = """
+                {
+                    "a": 1,
+                    "b": 2,
+                    "c": {
+                        "d": 3,
+                        "e": 4
+                    },
+                    "f": {
+                        "g": 5,
+                        "h": {
+                            "i": 6,
+                            "j": 7
+                        }
+                    },
+                    "k": [
+                        {
+                            "l": 8,
+                            "m": 9
+                        },
+                        {
+                            "n": 10
+                        },
+                        [11, 12],
+                        13
+                    ]
+                }
+                """;
 
-        Map<String, Object> result = exec.jsonAbbr1(map);
-        result.entrySet().stream().sorted(Entry.comparingByKey()).forEach(System.out::println);
+        JSONObject map = JSON.parseObject(json);
+        Map<String, Object> result = exec.jsonAbbr(map);
+        result.entrySet().stream()
+                .sorted(Entry.comparingByKey())
+                .forEach(System.out::println);
     }
 }

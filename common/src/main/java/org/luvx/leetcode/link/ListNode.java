@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
+ * 链表节点
+ *
  * @author Ren, Xie
  */
 @ToString

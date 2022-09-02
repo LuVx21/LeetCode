@@ -2,7 +2,7 @@ package org.luvx.leetcode.java;
 
 import org.luvx.common.more.MoreRuns;
 
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 
 public abstract class BaseTest {
     final String sample = "org.luvx.leetcode.java.%s._%d.Solution";
