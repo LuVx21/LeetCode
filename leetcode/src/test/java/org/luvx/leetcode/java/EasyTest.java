@@ -12,6 +12,11 @@ public class EasyTest extends BaseTest {
     }
 
     @Test
+    void m389() {
+        exec(389, "findTheDifference", "abcd", "abzcd");
+    }
+
+    @Test
     void m415() {
         exec(415, "addStrings1",
                 "456", "902",
