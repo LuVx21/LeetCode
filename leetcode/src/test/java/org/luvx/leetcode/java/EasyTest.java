@@ -42,6 +42,13 @@ public class EasyTest extends BaseTest {
     }
 
     @Test
+    void m1154() {
+        exec(1154, "dayOfYear",
+                "2019-01-09", "2019-02-10"
+        );
+    }
+
+    @Test
     void m2129() {
         exec(2129, "capitalizeTitle",
                 "capiTalIze tHe titLe",
