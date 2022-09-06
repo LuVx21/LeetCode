@@ -35,6 +35,13 @@ public class EasyTest extends BaseTest {
     }
 
     @Test
+    void m697() {
+        int[] array = {1, 2, 2, 3, 1, 4, 2};
+        int[] array1 = {1, 2, 2, 3, 1};
+        exec(697, "findShortestSubArray", array, array1);
+    }
+
+    @Test
     void m2129() {
         exec(2129, "capitalizeTitle",
                 "capiTalIze tHe titLe",
