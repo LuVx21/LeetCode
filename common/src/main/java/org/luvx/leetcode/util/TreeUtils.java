@@ -10,7 +10,7 @@ public class TreeUtils {
     /**
      * 将数组构建成完全二叉树
      */
-    private static TreeNode buildCBT(int[] array) {
+    public static TreeNode buildCBT(int[] array) {
         int length = array.length;
         if (length == 1) {
             return TreeNode.of(array[0]);

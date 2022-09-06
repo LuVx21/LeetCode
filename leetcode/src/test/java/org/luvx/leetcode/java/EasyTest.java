@@ -2,8 +2,19 @@ package org.luvx.leetcode.java;
 
 import org.junit.jupiter.api.Test;
 import org.luvx.leetcode.tree.Node;
+import org.luvx.leetcode.tree.TreeNode;
+import org.luvx.leetcode.util.TreeUtils;
 
 public class EasyTest extends BaseTest {
+    @Test
+    void m226() {
+        int[] array = {4, 2, 7, 1, 3, 6, 9};
+        TreeNode root = TreeUtils.buildCBT(array);
+
+        TreeNode root1 = TreeNode.of(2, TreeNode.of(1), TreeNode.of(3));
+        exec(226, "invertTree", root, root1);
+    }
+
     @Test
     void m344() {
         char[] array = {'h', 'e', 'l', 'l', 'o'};
