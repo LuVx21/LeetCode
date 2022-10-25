@@ -1,6 +1,6 @@
 package org.luvx.leetcode.java;
 
-import org.luvx.common.more.MoreRuns;
+import org.luvx.coding.common.more.MoreRuns;
 
 import com.alibaba.fastjson2.JSON;
 

@@ -3,7 +3,7 @@ package org.luvx.offer.array;
 import java.util.stream.Stream;
 
 import org.junit.jupiter.api.Test;
-import org.luvx.common.more.MoreRuns;
+import org.luvx.coding.common.more.MoreRuns;
 
 import lombok.val;
 

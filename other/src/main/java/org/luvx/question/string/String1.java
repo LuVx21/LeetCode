@@ -1,6 +1,6 @@
 package org.luvx.question.string;
 
-import org.luvx.common.more.MoreRuns;
+import org.luvx.coding.common.more.MoreRuns;
 
 public class String1 {
     /**
