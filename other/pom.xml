@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.luvx</groupId>
+        <groupId>org.luvx.coding</groupId>
         <artifactId>foobar</artifactId>
         <version>0.1</version>
     </parent>
@@ -15,7 +15,7 @@
     <name>${project.artifactId}</name>
     <dependencies>
         <dependency>
-            <groupId>org.luvx</groupId>
+            <groupId>org.luvx.coding</groupId>
             <artifactId>common</artifactId>
         </dependency>
     </dependencies>
