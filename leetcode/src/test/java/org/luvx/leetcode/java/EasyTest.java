@@ -67,4 +67,9 @@ public class EasyTest extends BaseTest {
                 "i lOve leetcode"
         );
     }
+
+    @Test
+    void m2574() {
+        exec(2574, "leftRigthDifference", (Object) new int[]{10, 4, 8, 3});
+    }
 }
