@@ -1,7 +1,7 @@
 package org.luvx.leetcode.java.medium._102;
 
 import org.luvx.leetcode.tree.TreeNode
-import org.luvx.leetcode.out
+import org.luvx.coding.common.enhancer.out
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 

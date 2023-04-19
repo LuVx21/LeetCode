@@ -1,6 +1,6 @@
 package org.luvx.leetcode.easy._485
 
-import org.luvx.leetcode.out
+import org.luvx.coding.common.enhancer.out
 
 /*
  * @lc app=leetcode.cn id=485 lang=kotlin

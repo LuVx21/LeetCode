@@ -1,6 +1,6 @@
 package org.luvx.question
 
-import org.luvx.leetcode.out
+import org.luvx.coding.common.enhancer.out
 
 /**leetcode-1027 扩展
  * 给定一个整数数组 A，返回 A 中最长连续等差子序列的长度

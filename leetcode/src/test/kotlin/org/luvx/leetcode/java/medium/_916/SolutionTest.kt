@@ -1,6 +1,6 @@
 package org.luvx.leetcode.java.medium._916;
 
-import org.luvx.leetcode.out
+import org.luvx.coding.common.enhancer.out
 import kotlin.test.Test
 
 class SolutionTest {

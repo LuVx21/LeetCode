@@ -1,6 +1,6 @@
 package org.luvx.leetcode.easy._1646
 
-import org.luvx.leetcode.out
+import org.luvx.coding.common.enhancer.out
 
 /*
  * @lc app=leetcode.cn id=1646 lang=kotlin

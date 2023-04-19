@@ -1,6 +1,6 @@
 package org.luvx.leetcode.medium._1027
 
-import org.luvx.leetcode.out
+import org.luvx.coding.common.enhancer.out
 
 /*
  * @lc app=leetcode.cn id=1027 lang=kotlin

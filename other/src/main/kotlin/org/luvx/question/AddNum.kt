@@ -1,6 +1,6 @@
 package org.luvx.question
 
-import org.luvx.leetcode.out
+import org.luvx.coding.common.enhancer.out
 
 fun addNum(num1: Int, num2: Int): Int {
     var num1 = num1

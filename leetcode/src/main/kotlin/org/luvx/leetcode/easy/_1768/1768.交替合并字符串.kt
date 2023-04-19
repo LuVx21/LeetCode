@@ -1,6 +1,6 @@
 package org.luvx.leetcode.easy._1768
 
-import org.luvx.leetcode.out
+import org.luvx.coding.common.enhancer.out
 
 /*
  * @lc app=leetcode.cn id=1768 lang=kotlin
@@ -63,4 +63,3 @@ fun main() {
     exec.mergeAlternately("ab", "pqrs").out()
     exec.mergeAlternately("abcd", "pq").out()
 }
-

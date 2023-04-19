@@ -1,6 +1,6 @@
 package org.luvx.leetcode.easy._338
 
-import org.luvx.leetcode.out
+import org.luvx.coding.common.enhancer.out
 
 // @lc code=start
 /*
