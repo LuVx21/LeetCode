@@ -30,10 +30,6 @@
             <groupId>org.luvx.coding</groupId>
             <artifactId>coding-common</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.luvx.coding</groupId>
-            <artifactId>coding-manifold</artifactId>
-        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -41,7 +37,7 @@
             <dependency>
                 <groupId>org.luvx.coding</groupId>
                 <artifactId>common</artifactId>
-                <version>0.1</version>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
