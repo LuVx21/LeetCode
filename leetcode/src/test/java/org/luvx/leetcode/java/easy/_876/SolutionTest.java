@@ -1,6 +1,6 @@
 package org.luvx.leetcode.java.easy._876;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.luvx.leetcode.link.ListNode;
 import org.luvx.leetcode.util.LinkUtils;
 

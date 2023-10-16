@@ -1,7 +1,7 @@
 package org.luvx.leetcode.java.medium._208;
 
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class TrieTest {
     @Test

@@ -1,6 +1,6 @@
 package org.luvx.leetcode.java.medium._129;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.luvx.leetcode.tree.TreeNode;
 
 public class SolutionTest {

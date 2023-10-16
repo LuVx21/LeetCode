@@ -2,7 +2,7 @@ package org.luvx.leetcode.java;
 
 import org.junit.jupiter.api.Test;
 
-public class MediumTest extends BaseTest {
+class MediumTest extends BaseTest {
 
     @Test
     void m34() {

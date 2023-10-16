@@ -1,8 +1,7 @@
 package org.luvx.leetcode.java;
 
-import org.luvx.coding.common.more.MoreRuns;
-
 import com.alibaba.fastjson2.JSON;
+import org.luvx.coding.common.more.MoreRuns;
 
 public abstract class BaseTest {
     final String sample = "org.luvx.leetcode.java.%s._%d.Solution";
@@ -11,7 +10,7 @@ public abstract class BaseTest {
         String className = sample.formatted(level(), id);
         MoreRuns.run(className, methodName, args).stream()
                 .map(JSON::toJSONString)
-                .map(s -> id + ": " + s)
+                .map(s -> STR."\{id}: \{s}")
                 .forEachOrdered(System.out::println);
     }
 

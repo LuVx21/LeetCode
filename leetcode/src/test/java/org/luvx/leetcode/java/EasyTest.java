@@ -5,7 +5,7 @@ import org.luvx.leetcode.tree.Node;
 import org.luvx.leetcode.tree.TreeNode;
 import org.luvx.leetcode.util.TreeUtils;
 
-public class EasyTest extends BaseTest {
+class EasyTest extends BaseTest {
     @Test
     void m226() {
         int[] array = {4, 2, 7, 1, 3, 6, 9};
