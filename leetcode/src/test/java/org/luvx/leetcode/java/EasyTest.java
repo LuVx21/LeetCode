@@ -21,6 +21,11 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m338() {
+        exec(338, "countBits", 2, 5);
+    }
+
+    @Test
     void m344() {
         char[] array = {'h', 'e', 'l', 'l', 'o'};
         char[] array1 = {'H', 'a', 'n', 'n', 'a', 'h'};
