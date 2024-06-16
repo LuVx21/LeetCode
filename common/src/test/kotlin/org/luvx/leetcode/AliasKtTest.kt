@@ -1,8 +1,9 @@
 package org.luvx.leetcode
 
+import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlin.test.Test
 
-private val log = mu.KotlinLogging.logger {}
+private val log = KotlinLogging.logger {}
 
 class AliasKtTest {
     @Test

@@ -7,6 +7,11 @@ import org.luvx.leetcode.util.TreeUtils;
 
 class EasyTest extends BaseTest {
     @Test
+    void m191() {
+        exec(191, "hammingWeight", 11, 128, 2147483645);
+    }
+
+    @Test
     void m226() {
         int[] array = {4, 2, 7, 1, 3, 6, 9};
         TreeNode root = TreeUtils.buildCBT(array);
