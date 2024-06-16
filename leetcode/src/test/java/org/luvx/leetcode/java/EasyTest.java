@@ -63,6 +63,11 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m762() {
+        exec(762, "countPrimeSetBits", 6, 10, 10, 15);
+    }
+
+    @Test
     void m1154() {
         exec(1154, "dayOfYear",
                 "2019-01-09", "2019-02-10"
