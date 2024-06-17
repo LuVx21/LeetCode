@@ -84,6 +84,11 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m2220() {
+        exec(2220, "minBitFlips", 10, 7, 3, 4);
+    }
+
+    @Test
     void m2574() {
         exec(2574, "leftRigthDifference", (Object) new int[]{10, 4, 8, 3});
     }
