@@ -29,6 +29,13 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m477() {
+        int[] array1 = {4, 14, 2};
+        int[] array2 = {4, 14, 4};
+        exec(477, "totalHammingDistance", array1, array2);
+    }
+
+    @Test
     void m560() {
         int[] array = {1, 2, 3, 0, 3};
         exec(560, "subarraySum",
