@@ -15,6 +15,13 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m137() {
+        int[] i1 = {2, 2, 3, 2};
+        int[] i2 = {0, 1, 0, 1, 0, 1, 99};
+        exec(137, "singleNumber", i1, i2);
+    }
+
+    @Test
     void m421() {
         int[] array = {3, 10, 5, 25, 2, 8};
         // int[] array = {14, 70, 53, 83, 49, 91, 36, 80, 92, 51, 66, 70};
