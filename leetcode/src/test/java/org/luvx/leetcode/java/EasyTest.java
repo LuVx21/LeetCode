@@ -100,6 +100,12 @@ class EasyTest extends BaseTest {
 
     @Test
     void m2574() {
-        exec(2574, "leftRigthDifference", (Object) new int[]{10, 4, 8, 3});
+        int[] array1 = {10, 4, 8, 3}, array2 = {1};
+        exec(2574, "leftRigthDifference", array1, array2);
+    }
+
+    @Test
+    void m3174() {
+        exec(3174, "clearDigits", "abc", "cb34", "");
     }
 }
