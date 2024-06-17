@@ -21,6 +21,11 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m326() {
+        exec(326, "isPowerOfThree", 27, 0, 9, 45, 18);
+    }
+
+    @Test
     void m338() {
         exec(338, "countBits", 2, 5);
     }
