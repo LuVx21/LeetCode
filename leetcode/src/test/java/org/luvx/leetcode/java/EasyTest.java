@@ -56,6 +56,11 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m504() {
+        exec(504, "convertToBase7", 101, -7, 7, 3, -3,0,1,-1);
+    }
+
+    @Test
     void m559() {
         Node root = Node.of(1,
                 Node.of(3, Node.of(5, Node.of(7)), Node.of(6)),
