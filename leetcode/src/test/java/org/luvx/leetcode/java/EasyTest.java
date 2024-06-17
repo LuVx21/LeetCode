@@ -80,6 +80,11 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m1342() {
+        exec(1342, "numberOfSteps", 14, 8, 123);
+    }
+
+    @Test
     void m2129() {
         exec(2129, "capitalizeTitle",
                 "capiTalIze tHe titLe",
