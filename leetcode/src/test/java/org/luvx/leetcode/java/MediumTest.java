@@ -21,6 +21,11 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m201() {
+        exec(201, "rangeBitwiseAnd", 5, 7, 0, 0, 1, 2147483646);
+    }
+
+    @Test
     void m371() {
         exec(371, "getSum", 1, 2, 2, 3);
     }
