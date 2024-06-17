@@ -3,7 +3,6 @@ package org.luvx.leetcode.java;
 import org.junit.jupiter.api.Test;
 
 class MediumTest extends BaseTest {
-
     @Test
     void m34() {
         int[] array = {5, 7, 7, 8, 8, 9, 10};
@@ -19,6 +18,11 @@ class MediumTest extends BaseTest {
         int[] i1 = {2, 2, 3, 2};
         int[] i2 = {0, 1, 0, 1, 0, 1, 99};
         exec(137, "singleNumber", i1, i2);
+    }
+
+    @Test
+    void m371() {
+        exec(371, "getSum", 1, 2, 2, 3);
     }
 
     @Test

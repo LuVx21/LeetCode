@@ -1,6 +1,8 @@
 package org.luvx.leetcode.java;
 
 import com.alibaba.fastjson2.JSON;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.luvx.coding.common.more.MoreRuns;
 
 abstract class BaseTest {
@@ -19,5 +21,22 @@ abstract class BaseTest {
         simpleName = simpleName.substring(0, simpleName.lastIndexOf("Test"));
         return simpleName.toLowerCase();
     }
+
+    // int      id;
+    // String   methodName = "";
+    // Object[] args       = null;
+    //
+    // @BeforeEach
+    // void before() {
+    //     id = 0;
+    //     methodName = "";
+    //     args = null;
+    // }
+    //
+    // @AfterEach
+    // void tearDown() {
+    //     System.out.println("haha");
+    //     // exec(id, methodName, args);
+    // }
 }
 
