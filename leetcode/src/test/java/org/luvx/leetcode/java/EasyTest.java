@@ -46,6 +46,11 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m461() {
+        exec(461, "hammingDistance", 1, 4, 3, 1);
+    }
+
+    @Test
     void m559() {
         Node root = Node.of(1,
                 Node.of(3, Node.of(5, Node.of(7)), Node.of(6)),
