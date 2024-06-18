@@ -14,18 +14,18 @@ class Solution {
 
     public String convertToBase7(int num) {
         // return Integer.toString(num, 7);
-        int n = num > 0 ? -num : num;
+        int n = Math.abs(num);
         byte[] buf = new byte[33];
-        int charPosition = 32;
-        while (n <= -7) {
-            buf[charPosition--] = (byte) digits[-(n % 7)];
+        int index = 32;
+        while (n >= 7) {
+            buf[index--] = (byte) digits[n % 7];
             n /= 7;
         }
-        buf[charPosition] = (byte) digits[-n];
+        buf[index] = (byte) digits[n];
         if (num < 0) {
-            buf[--charPosition] = '-';
+            buf[--index] = '-';
         }
-        byte[] bytes = Arrays.copyOfRange(buf, charPosition, charPosition + (33 - charPosition));
+        byte[] bytes = Arrays.copyOfRange(buf, index, index + (33 - index));
         return new String(bytes);
     }
 
@@ -75,4 +75,3 @@ class Solution {
     }
 }
 // @lc code=end
-

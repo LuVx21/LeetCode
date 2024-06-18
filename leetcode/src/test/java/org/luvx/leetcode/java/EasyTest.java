@@ -43,6 +43,11 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m405() {
+        exec(405, "toHex", 26, -1, -26);
+    }
+
+    @Test
     void m415() {
         exec(415, "addStrings1",
                 "456", "902",
@@ -57,7 +62,7 @@ class EasyTest extends BaseTest {
 
     @Test
     void m504() {
-        exec(504, "convertToBase7", 101, -7, 7, 3, -3,0,1,-1);
+        exec(504, "convertToBase7", 101, -7, 7, 3, -3, 0, 1, -1);
     }
 
     @Test
