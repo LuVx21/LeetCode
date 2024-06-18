@@ -1,14 +1,29 @@
 package org.luvx.leetcode.java;
 
 import org.junit.jupiter.api.Test;
+import org.luvx.leetcode.link.ListNode;
 import org.luvx.leetcode.tree.Node;
 import org.luvx.leetcode.tree.TreeNode;
+import org.luvx.leetcode.util.LinkUtils;
 import org.luvx.leetcode.util.TreeUtils;
 
 class EasyTest extends BaseTest {
     @Test
+    void m21() {
+        final ListNode h1 = LinkUtils.initLinked(1, 2, 3);
+        final ListNode h2 = LinkUtils.initLinked(1, 3, 4);
+        exec(21, "mergeTwoLists", h1, h2);
+    }
+
+    @Test
     void m191() {
         exec(191, "hammingWeight", 11, 128, 2147483645);
+    }
+
+    @Test
+    void m206() {
+        ListNode h = LinkUtils.initLinked(1, 2, 3, 4, 5);
+        exec(206, "reverseList", h);
     }
 
     @Test
@@ -110,6 +125,12 @@ class EasyTest extends BaseTest {
     @Test
     void m762() {
         exec(762, "countPrimeSetBits", 6, 10, 10, 15);
+    }
+
+    @Test
+    void m876() {
+        ListNode h = LinkUtils.initLinked(1, 2, 3, 4, 5, 6);
+        exec(876, "middleNode", h);
     }
 
     @Test

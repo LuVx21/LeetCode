@@ -2,14 +2,12 @@ package org.luvx.leetcode.link;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 /**
  * 链表节点
  *
  * @author Ren, Xie
  */
-@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class ListNode {
@@ -29,5 +27,19 @@ public class ListNode {
     public ListNode(int val, ListNode next) {
         this.val = val;
         this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        ListNode cur = this;
+        while (cur != null) {
+            if (cur == this && cur.pre != null) {
+                sb.append(cur.pre).append("<-");
+            }
+            sb.append(cur.val).append("->");
+            cur = cur.next;
+        }
+        return sb.toString();
     }
 }
