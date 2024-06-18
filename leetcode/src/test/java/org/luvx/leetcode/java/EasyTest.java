@@ -103,6 +103,11 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m1317() {
+        exec(1317, "getNoZeroIntegers", 2, 11, 10000, 69, 1010);
+    }
+
+    @Test
     void m1342() {
         exec(1342, "numberOfSteps", 14, 8, 123);
     }
