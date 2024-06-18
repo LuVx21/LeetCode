@@ -1,15 +1,26 @@
+package org.luvx.leetcode.java.easy._83;
 /*
  * @lc app=leetcode.cn id=83 lang=java
  *
  * [83] 删除排序链表中的重复元素
  */
+
+import org.luvx.leetcode.link.ListNode;
+
+// @lc code=start
+
+
 /**
  * Definition for singly-linked list.
+ * <pre>
  * public class ListNode {
  *     int val;
  *     ListNode next;
- *     ListNode(int x) { val = x; }
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
+ * </pre>
  */
 class Solution {
     public ListNode deleteDuplicates(ListNode head) {
@@ -27,4 +38,5 @@ class Solution {
         return head;
     }
 }
+// @lc code=end
 
