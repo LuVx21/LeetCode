@@ -56,6 +56,11 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m434() {
+        exec(434, "countSegments", "Hello, my name is John", " a b c  d ", "", " ", "                ");
+    }
+
+    @Test
     void m461() {
         exec(461, "hammingDistance", 1, 4, 3, 1);
     }
