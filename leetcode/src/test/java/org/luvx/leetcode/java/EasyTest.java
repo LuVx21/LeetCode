@@ -66,6 +66,14 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m506() {
+        int[] array1 = {5, 4, 3, 2, 1};
+        int[] array2 = {10, 3, 8, 9, 4};
+        int[] array3 = {13, 6, 15, 38, 23};
+        exec(506, "findRelativeRanks", array1, array2, array3);
+    }
+
+    @Test
     void m559() {
         Node root = Node.of(1,
                 Node.of(3, Node.of(5, Node.of(7)), Node.of(6)),
