@@ -96,6 +96,18 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m724() {
+        int[] array1 = {1, 7, 3, 6, 5, 6};
+        int[] array2 = {1, 2, 3};
+        int[] array3 = {2, 1, -1};
+        int[] array4 = {2, 3, -1, 8, 4};
+        int[] array5 = {1, -1, 4};
+        int[] array6 = {2, 5};
+        int[] array7 = {1};
+        exec(724, "pivotIndex", array1, array2, array3, array4, array5, array6, array7);
+    }
+
+    @Test
     void m762() {
         exec(762, "countPrimeSetBits", 6, 10, 10, 15);
     }
