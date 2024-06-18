@@ -128,6 +128,13 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m766() {
+        int[][] array1 = {{1, 2, 3, 4}, {5, 1, 2, 3}, {9, 5, 1, 2}};
+        int[][] array2 = {{1, 2}, {2, 2}};
+        exec(766, "isToeplitzMatrix", array1, array2);
+    }
+
+    @Test
     void m876() {
         ListNode h = LinkUtils.initLinked(1, 2, 3, 4, 5, 6);
         exec(876, "middleNode", h);
