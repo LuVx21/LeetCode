@@ -1,6 +1,9 @@
 package org.luvx.leetcode.java;
 
 import org.junit.jupiter.api.Test;
+import org.luvx.leetcode.link.ListNode;
+
+import static org.luvx.leetcode.util.LinkUtils.initLinked;
 
 class MediumTest extends BaseTest {
     @Test
@@ -49,6 +52,16 @@ class MediumTest extends BaseTest {
         int[] array = {1, 2, 3, 0, 3};
         exec(560, "subarraySum",
                 array, 3, array, 5
+        );
+    }
+
+    @Test
+    void m1669() {
+        ListNode list1 = initLinked(0, 1, 2, 3, 4, 5), list2 = initLinked(1000000, 1000001, 1000002);
+        exec(1669, "mergeInBetween", list1, 3, 4, list2,
+                initLinked(0, 1, 2, 3, 4, 5, 6),
+                2, 5,
+                initLinked(1000000, 1000001, 1000002, 1000003, 1000004)
         );
     }
 }

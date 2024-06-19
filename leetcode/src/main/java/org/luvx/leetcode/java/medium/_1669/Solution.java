@@ -1,24 +1,25 @@
 package org.luvx.leetcode.java.medium._1669;
-
-import org.luvx.leetcode.link.ListNode;
-import org.luvx.leetcode.util.LinkUtils;
 /*
  * @lc app=leetcode.cn id=1669 lang=java
  *
  * [1669] 合并两个链表
  */
 
+import org.luvx.leetcode.link.ListNode;
+
 // @lc code=start
 
 /**
  * Definition for singly-linked list.
+ * <pre>
  * public class ListNode {
- * int val;
- * ListNode next;
- * ListNode() {}
- * ListNode(int val) { this.val = val; }
- * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
+ * </pre>
  */
 class Solution {
     /**
@@ -30,6 +31,28 @@ class Solution {
      * 0,1,2,1000000,1000001,1000002,5
      */
     public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
+        ListNode fast = list1, slow = list1;
+        for (int i = 0; i < b - a; i++) {
+            fast = fast.next;
+        }
+        ListNode slowPre = list1;
+        for (int i = 0; i < a; i++) {
+            slowPre = slow;
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slowPre.next = list2;
+        // fastPre.next = null;
+        while (list2.next != null) {
+            list2 = list2.next;
+        }
+        list2.next = fast.next;
+
+        // 题目要求a>=1, 因此头仍为list1
+        return list1;
+    }
+
+    public ListNode mergeInBetween1(ListNode list1, int a, int b, ListNode list2) {
         if (list1 == null) {
             return null;
         }
@@ -47,20 +70,5 @@ class Solution {
         list2.next = next;
         return list1;
     }
-
-    public static void main(String[] args) {
-        final Solution exec = new Solution();
-        ListNode list1 = LinkUtils.initLinked(0, 1, 2, 3, 4, 5);
-        ListNode list2 = LinkUtils.initLinked(1000000, 1000001, 1000002);
-        LinkUtils.printLink(
-                exec.mergeInBetween(list1, 3, 4, list2)
-        );
-        list1 = LinkUtils.initLinked(0, 1, 2, 3, 4, 5, 6);
-        list2 = LinkUtils.initLinked(1000000, 1000001, 1000002, 1000003, 1000004);
-        LinkUtils.printLink(
-                exec.mergeInBetween(list1, 2, 5, list2)
-        );
-    }
 }
 // @lc code=end
-
