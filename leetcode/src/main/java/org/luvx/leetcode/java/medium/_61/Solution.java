@@ -1,15 +1,25 @@
+package org.luvx.leetcode.java.medium._61;
 /*
  * @lc app=leetcode.cn id=61 lang=java
  *
  * [61] 旋转链表
  */
+
+import org.luvx.leetcode.link.ListNode;
+
+// @lc code=start
+
 /**
  * Definition for singly-linked list.
+ * <pre>
  * public class ListNode {
  *     int val;
  *     ListNode next;
- *     ListNode(int x) { val = x; }
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
+ * </pre>
  */
 class Solution {
     public ListNode rotateRight(ListNode head, int k) {
@@ -68,4 +78,5 @@ class Solution {
         }
     }
 }
+// @lc code=end
 

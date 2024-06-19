@@ -1,15 +1,24 @@
+package org.luvx.leetcode.java.medium._148;
 /*
  * @lc app=leetcode.cn id=148 lang=java
  *
  * [148] 排序链表
  */
+
+import org.luvx.leetcode.link.ListNode;
+// @lc code=start
+
 /**
  * Definition for singly-linked list.
+ * <pre>
  * public class ListNode {
  *     int val;
  *     ListNode next;
- *     ListNode(int x) { val = x; }
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
+ * </pre>
  */
 class Solution {
     /**
@@ -96,5 +105,5 @@ class Solution {
         return count;
     }
 }
+// @lc code=end
 
-// 快排/归并

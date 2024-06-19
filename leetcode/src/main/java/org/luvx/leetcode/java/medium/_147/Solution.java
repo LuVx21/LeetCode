@@ -1,15 +1,24 @@
+package org.luvx.leetcode.java.medium._147;
 /*
  * @lc app=leetcode.cn id=147 lang=java
  *
  * [147] 对链表进行插入排序
  */
+
+import org.luvx.leetcode.link.ListNode;
+// @lc code=start
+
 /**
  * Definition for singly-linked list.
+ * <pre>
  * public class ListNode {
  *     int val;
  *     ListNode next;
- *     ListNode(int x) { val = x; }
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
+ * </pre>
  */
 class Solution {
 
@@ -83,4 +92,5 @@ class Solution {
         return fakeHead.next;
     }
 }
+// @lc code=end
 

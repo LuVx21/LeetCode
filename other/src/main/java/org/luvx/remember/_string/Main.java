@@ -1,9 +1,12 @@
-package org.luvx.remember.a;
+package org.luvx.remember._string;
 
-public class Ren {
+public class Main {
 
+    /**
+     * 删除字符串中重复字符(重复的保留一个)
+     */
     public String removeDuplicateLetters(String s) {
-        if (s.length() == 0) {
+        if (s.isEmpty()) {
             return "";
         }
         int[] array = new int[26];
@@ -18,6 +21,9 @@ public class Ren {
             }
         }
         return sb.toString();
+    }
+
+    void main() {
     }
 }
 
