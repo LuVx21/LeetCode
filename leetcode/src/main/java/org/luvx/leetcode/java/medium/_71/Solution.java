@@ -1,28 +1,42 @@
-import java.util.Arrays;
-
+package org.luvx.leetcode.java.medium._71;
 /*
  * @lc app=leetcode.cn id=71 lang=java
  *
  * [71] 简化路径
  */
-class Solution {
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+// @lc code=start
+class Solution {
+    final Set<String> skip = Set.of("..", ".", "");
+
+    /**
+     * "/a/./b//../../c/" -> "/c"
+     */
     public String simplifyPath(String path) {
         final String separator = "/";
-        Deque<String> stack = new LinkedList<>();
-        Set<String> skip = new HashSet<>(Arrays.asList("..", ".", ""));
-        for (String dir : path.split(separator)) {
-            if (dir.equals("..") && !stack.isEmpty()) {
-                stack.pop();
+
+        String[] split = path.split(separator);
+        int index = -1;
+        String[] stack = new String[split.length];
+        for (String dir : split) {
+            if (dir.equals("..") && index >= 0) {
+                stack[index--] = null;
             } else if (!skip.contains(dir)) {
-                stack.push(dir);
+                stack[++index] = dir;
             }
         }
-        String res = "";
+
+        StringBuilder sb = new StringBuilder();
         for (String dir : stack) {
-            res = separator + dir + res;
+            if (dir != null) {
+                sb.append(separator).append(dir);
+            }
         }
-        return res.isEmpty() ? separator : res;
+        return sb.isEmpty() ? separator : sb.toString();
     }
 
     /**
@@ -48,8 +62,8 @@ class Solution {
                 String s = path.substring(pre + 1, end);
                 System.out.println(i + ":" + s);
                 if (s.equals("..")) {
-                    if (list.size() != 0) {
-                        list.remove(list.size() - 1);
+                    if (!list.isEmpty()) {
+                        list.removeLast();
                     }
                 } else if (s.equals(".") || s.equals("")) {
                 } else {
@@ -58,7 +72,8 @@ class Solution {
                 pre = i;
             }
         }
-        return "/" + list.stream().collect(Collectors.joining("/"));
+        return "/" + String.join("/", list);
     }
 }
+// @lc code=end
 

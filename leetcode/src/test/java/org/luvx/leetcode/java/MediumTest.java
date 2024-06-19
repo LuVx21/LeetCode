@@ -17,10 +17,27 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m71() {
+        exec(71, "simplifyPath", "/home/", "/../", "/home//foo/",
+                "/a/./b/../../c/", "/a/./b//../../c/");
+    }
+
+    @Test
     void m137() {
         int[] i1 = {2, 2, 3, 2};
         int[] i2 = {0, 1, 0, 1, 0, 1, 99};
         exec(137, "singleNumber", i1, i2);
+    }
+
+    @Test
+    void m150() {
+        String[][] i1 = {
+                {"18"},
+                {"2", "1", "+", "3", "*"},
+                {"4", "13", "5", "/", "+"},
+                {"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}
+        };
+        exec(150, "evalRPN", i1);
     }
 
     @Test
