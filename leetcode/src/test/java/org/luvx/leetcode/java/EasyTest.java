@@ -158,6 +158,12 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m1475() {
+        int[][] arg = {{8, 4, 6, 2, 3}, {1, 2, 3, 4, 5}, {10, 1, 1, 6}};
+        exec(1475, "finalPrices", arg);
+    }
+
+    @Test
     void m2129() {
         exec(2129, "capitalizeTitle",
                 "capiTalIze tHe titLe",
