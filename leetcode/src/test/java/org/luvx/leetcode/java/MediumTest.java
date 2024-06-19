@@ -56,6 +56,16 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m739() {
+        int[][] array = {
+                {73, 74, 75, 71, 69, 72, 76, 73}, {30, 40, 50, 60}, {30, 60, 90},
+                {89, 62, 70, 58, 47, 47, 46, 76, 100, 70},
+                {34, 80, 80, 34, 34, 80, 80, 80, 80, 34}
+        };
+        exec(739, "dailyTemperatures", array);
+    }
+
+    @Test
     void m1669() {
         ListNode list1 = initLinked(0, 1, 2, 3, 4, 5), list2 = initLinked(1000000, 1000001, 1000002);
         exec(1669, "mergeInBetween", list1, 3, 4, list2,
