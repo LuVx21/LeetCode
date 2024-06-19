@@ -16,24 +16,6 @@ class Solution {
      * [8,4,6,2,3] -> [4,2,4,2,3]
      */
     public int[] finalPrices(int[] prices) {
-        int[] r = new int[prices.length];
-
-        for (int i = 0; i < prices.length; i++) {
-            r[i] = prices[i] - check(prices[i], i, prices);
-        }
-        return r;
-    }
-
-    public int check(int num, int index, int[] prices) {
-        for (int i = index + 1; i < prices.length; i++) {
-            if (num >= prices[i]) {
-                return prices[i];
-            }
-        }
-        return 0;
-    }
-
-    public int[] finalPrices0(int[] prices) {
         int len = prices.length;
         int[] r = new int[len];
 

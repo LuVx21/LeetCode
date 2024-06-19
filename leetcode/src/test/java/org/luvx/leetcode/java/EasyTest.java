@@ -81,6 +81,16 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m496() {
+        int[][] arg = {
+                {4, 1, 2}, {1, 3, 4, 2},
+                {2, 4}, {1, 2, 3, 4},
+                {3, 1, 5, 7, 9, 2, 6}, {1, 2, 3, 5, 6, 7, 9, 11}
+        };
+        exec(496, "nextGreaterElement", arg);
+    }
+
+    @Test
     void m504() {
         exec(504, "convertToBase7", 101, -7, 7, 3, -3, 0, 1, -1);
     }
