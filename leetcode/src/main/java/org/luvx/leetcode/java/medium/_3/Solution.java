@@ -36,6 +36,23 @@ class Solution {
         return max;
     }
 
+    public int lengthOfLongestSubstring1(String s) {
+        // 题目声明字符串 s 由英文字母、数字、符号和空格组成
+        // 所以这里使用一个长度为 256 的数组来模拟 Map 功能
+        int[] set = new int[256];
+        int max = 0, length = s.length();
+        for (int left = 0, right = 0; right < length; right++) {
+            var c = s.charAt(right);
+            set[c]++;
+            while (set[c] > 1) {
+                set[s.charAt(left)]--;
+                left++;
+            }
+            max = Math.max(max, right - left + 1);
+        }
+        return max;
+    }
+
     /**
      * 滑动窗口
      * Usage: pwwkew -> 3

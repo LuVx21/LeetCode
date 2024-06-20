@@ -8,7 +8,7 @@ import static org.luvx.leetcode.util.LinkUtils.initLinked;
 class MediumTest extends BaseTest {
     @Test
     void m3() {
-        exec(3, "lengthOfLongestSubstring0", "abcabcbb", "pwwkew", "dvdf");
+        exec(3, "lengthOfLongestSubstring", "abcabcbb", "pwwkew", "dvdf");
     }
 
     @Test
