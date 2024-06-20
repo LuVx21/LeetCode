@@ -165,6 +165,12 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m977() {
+        int[][] h = {{-4, -1, 0, 3, 10}, {-7, -3, 2, 3, 11}, {-3}};
+        exec(977, "sortedSquares", h);
+    }
+
+    @Test
     void m1154() {
         exec(1154, "dayOfYear",
                 "2019-01-09", "2019-02-10"
