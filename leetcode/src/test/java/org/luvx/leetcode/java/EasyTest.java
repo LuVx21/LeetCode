@@ -36,6 +36,15 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m228() {
+        int[][] array = {
+                {0, 1, 2, 4, 5, 7},
+                {0, 2, 3, 4, 6, 8, 9}
+        };
+        exec(228, "summaryRanges", array);
+    }
+
+    @Test
     void m326() {
         exec(326, "isPowerOfThree", 27, 0, 9, 45, 18);
     }
