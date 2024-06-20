@@ -67,6 +67,11 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m392() {
+        exec(392, "isSubsequence", "abc", "ahbgdc", "acb", "ahbgdc", "axc", "ahbgdc");
+    }
+
+    @Test
     void m405() {
         exec(405, "toHex", 26, -1, -26);
     }
