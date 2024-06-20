@@ -5,13 +5,10 @@ package org.luvx.leetcode.java.medium._3;
  * [3] 无重复字符的最长子串
  */
 
-// @lc code=start
-
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
+// @lc code=start
 class Solution {
     /**
      * 给定一个字符串, 请你找出其中不含有重复字符的最长子串的长度
@@ -22,10 +19,10 @@ class Solution {
      */
     public int lengthOfLongestSubstring0(String s) {
         final int length = s.length();
-        if (length == 0 || length == 1) {
+        if (length <= 1) {
             return length;
         }
-        HashMap<Character, Integer> map = new HashMap<>(length);
+        var map = new HashMap<Character, Integer>(length);
         int max = 0;
         for (int i = 0, start = 0; i < length; ++i) {
             char key = s.charAt(i);
@@ -40,18 +37,20 @@ class Solution {
     }
 
     /**
+     * 滑动窗口
      * Usage: pwwkew -> 3
      * <p>
      * set: 存储不重复子串的字符, 遇到重复时, 将第一个重复及之前的字符删除, 重新存储不重复的子串
      */
     public int lengthOfLongestSubstring(String s) {
         final int length = s.length();
-        if (length == 0 || length == 1) {
+        if (length <= 1) {
             return length;
         }
-        Set<Character> set = new HashSet<>();
+        var set = new HashSet<Character>();
         int max = 0;
         for (int i = 0, j = 0; i < length; ) {
+            // i没变化,重复进入循环
             if (set.contains(s.charAt(i))) {
                 set.remove(s.charAt(j++));
             } else {
@@ -60,13 +59,6 @@ class Solution {
             }
         }
         return max;
-    }
-
-    public static void main(String[] args) {
-        final Solution exec = new Solution();
-        List.of("pwwkew", "dvdf").forEach(s ->
-                System.out.println(exec.lengthOfLongestSubstring(s))
-        );
     }
 }
 // @lc code=end

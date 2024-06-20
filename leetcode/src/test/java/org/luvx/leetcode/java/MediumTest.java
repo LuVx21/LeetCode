@@ -7,6 +7,11 @@ import static org.luvx.leetcode.util.LinkUtils.initLinked;
 
 class MediumTest extends BaseTest {
     @Test
+    void m3() {
+        exec(3, "lengthOfLongestSubstring0", "abcabcbb", "pwwkew", "dvdf");
+    }
+
+    @Test
     void m34() {
         int[] array = {5, 7, 7, 8, 8, 9, 10};
         exec(34, "searchRange",
