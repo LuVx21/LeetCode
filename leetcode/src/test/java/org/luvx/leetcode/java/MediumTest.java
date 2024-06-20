@@ -111,6 +111,12 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m1019() {
+        ListNode h1 = initLinked(2, 1, 5), h2 = initLinked(2, 7, 4, 3, 5);
+        exec(1019, "nextLargerNodes", h1, h2);
+    }
+
+    @Test
     void m1669() {
         ListNode list1 = initLinked(0, 1, 2, 3, 4, 5), list2 = initLinked(1000000, 1000001, 1000002);
         exec(1669, "mergeInBetween", list1, 3, 4, list2,
