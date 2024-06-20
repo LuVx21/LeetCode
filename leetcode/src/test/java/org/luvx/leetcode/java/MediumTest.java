@@ -119,4 +119,13 @@ class MediumTest extends BaseTest {
                 initLinked(1000000, 1000001, 1000002, 1000003, 1000004)
         );
     }
+
+    @Test
+    void m2487() {
+        ListNode h1 = initLinked(5, 2, 13, 3, 8);
+        ListNode h2 = initLinked(1, 1, 1, 1);
+        exec(2487, "removeNodes", h1
+                , h2
+        );
+    }
 }
