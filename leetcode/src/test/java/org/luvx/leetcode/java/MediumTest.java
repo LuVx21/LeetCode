@@ -61,6 +61,14 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m209() {
+        exec(209, "minSubArrayLen", 7, new int[]{2, 3, 1, 2, 4, 3},
+                4, new int[]{1, 4, 4},
+                11, new int[]{1, 1, 1, 1, 1, 1, 1, 1}
+        );
+    }
+
+    @Test
     void m371() {
         exec(371, "getSum", 1, 2, 2, 3);
     }
