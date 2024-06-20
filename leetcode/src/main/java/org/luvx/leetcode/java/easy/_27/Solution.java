@@ -8,16 +8,13 @@ package org.luvx.leetcode.java.easy._27;
 // @lc code=start
 class Solution {
     public int removeElement(int[] nums, int val) {
-      int index = 0;
+        int index = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != val) {
                 nums[index] = nums[i];
                 index++;
-            } else {
-                continue;
             }
         }
-
         return index;
     }
 }

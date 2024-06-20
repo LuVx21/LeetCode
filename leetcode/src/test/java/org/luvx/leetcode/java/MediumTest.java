@@ -23,6 +23,12 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m74() {
+        int[][] array1 = {{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
+        exec(74, "searchMatrix", array1, 3, array1, 13);
+    }
+
+    @Test
     void m137() {
         int[] i1 = {2, 2, 3, 2};
         int[] i2 = {0, 1, 0, 1, 0, 1, 99};
@@ -38,6 +44,15 @@ class MediumTest extends BaseTest {
                 {"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}
         };
         exec(150, "evalRPN", i1);
+    }
+
+    @Test
+    void m162() {
+        int[][] arg = {
+                {1, 2, 3, 1},
+                {1, 2, 1, 3, 5, 6, 4}
+        };
+        exec(162, "findPeakElement", arg);
     }
 
     @Test
