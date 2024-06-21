@@ -22,6 +22,10 @@ abstract class BaseTest {
         return simpleName.toLowerCase();
     }
 
+    protected int[] array(int... nums) {
+        return nums;
+    }
+
     // int      id;
     // String   methodName = "";
     // Object[] args       = null;

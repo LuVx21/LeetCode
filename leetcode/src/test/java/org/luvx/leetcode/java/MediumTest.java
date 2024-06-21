@@ -19,11 +19,22 @@ class MediumTest extends BaseTest {
     @Test
     void m34() {
         int[] array = {5, 7, 7, 8, 8, 9, 10};
-        exec(34, "searchRange",
-                array, 8,
-                array, 9,
-                array, 11
-        );
+        exec(34, "searchRange", array, 8, array, 9, array, 11);
+    }
+
+    @Test
+    void m39() {
+        exec(39, "combinationSum", array(2, 3, 6, 7), 7, array(2, 3, 5), 8);
+    }
+
+    @Test
+    void m40() {
+        exec(40, "combinationSum2", array(10, 1, 2, 7, 6, 1, 5), 8);
+    }
+
+    @Test
+    void m47() {
+        exec(47, "permuteUnique", array(1, 1, 2), array(1, 2, 3));
     }
 
     @Test

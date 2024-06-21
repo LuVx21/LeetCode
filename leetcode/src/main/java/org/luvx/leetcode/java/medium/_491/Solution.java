@@ -36,7 +36,7 @@ class Solution {
                 used.add(nums[i]);
                 list.add(nums[i]);
                 helper(result, list, i + 1, nums);
-                list.remove(list.size() - 1);
+                list.removeLast();
             }
         }
     }
@@ -56,7 +56,7 @@ class Solution {
             if (list.size() == 0 || list.get(list.size() - 1) <= nums[i]) {
                 list.add(nums[i]);
                 findSequence(result, list, i + 1, nums);
-                list.remove(list.size() - 1);
+                list.removeLast();
             }
         }
     }

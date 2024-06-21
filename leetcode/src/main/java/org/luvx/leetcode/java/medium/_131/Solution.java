@@ -28,7 +28,7 @@ class Solution {
             }
             list.add(s.substring(start, i + 1));
             backtrack(result, list, s, i + 1);
-            list.remove(list.size() - 1);
+            list.removeLast();
         }
     }
 

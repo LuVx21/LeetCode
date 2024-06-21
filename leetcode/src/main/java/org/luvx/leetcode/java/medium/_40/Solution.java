@@ -5,44 +5,43 @@ package org.luvx.leetcode.java.medium._40;
  * [40] 组合总和 II
  */
 
-// @lc code=start
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// @lc code=start
 class Solution {
     /**
      * 10,1,2,7,6,1,5=8 -> [1,1,6],[1,2,5],[1,7],[2,6]
+     *
+     * @param candidates 元素可能重复, 且其中元素只能只能用一次
      */
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        List<List<Integer>> result = new ArrayList<>();
+        // 可能重复,先排序
         Arrays.sort(candidates);
-        backtrack(result, new ArrayList<>(), candidates, target, 0);
+
+        var result = new ArrayList<List<Integer>>();
+        backtrack(candidates, target, new ArrayList<>(), 0, result);
         return result;
     }
 
-    private void backtrack(List<List<Integer>> result, List<Integer> list, int[] candidates, int remain, int start) {
+    private void backtrack(int[] candidates, int remain, List<Integer> sum, int start, List<List<Integer>> result) {
         if (remain < 0) {
             return;
         }
         if (remain == 0) {
-            result.add(new ArrayList<>(list));
+            result.add(new ArrayList<>(sum));
             return;
         }
         for (int i = start; i < candidates.length; i++) {
+            // 元素重复可能导致结果中有相同的组合
             if (i > start && candidates[i] == candidates[i - 1]) {
                 continue;
             }
-            list.add(candidates[i]);
-            backtrack(result, list, candidates, remain - candidates[i], i + 1);
-            list.remove(list.size() - 1);
+            sum.add(candidates[i]);
+            backtrack(candidates, remain - candidates[i], sum, i + 1, result);
+            sum.removeLast();
         }
-    }
-
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-        System.out.println(solution.combinationSum2(new int[] {10, 1, 2, 7, 6, 1, 5}, 8));
     }
 }
 // @lc code=end

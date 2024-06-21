@@ -38,7 +38,7 @@ class Solution {
             num = (num + m - 1) % i;
             list.remove(num);
         }
-        return list.get(0);
+        return list.getFirst();
     }
 
     public static void main(String[] args) {

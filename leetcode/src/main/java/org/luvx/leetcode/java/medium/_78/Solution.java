@@ -5,17 +5,16 @@ package org.luvx.leetcode.java.medium._78;
  * [78] 子集
  */
 
-// @lc code=start
-
 import java.util.ArrayList;
 import java.util.List;
 
+// @lc code=start
 class Solution {
     /**
      * 1,2,3 -> [],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]
      */
     public List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
+        var result = new ArrayList<List<Integer>>();
         backtrack(result, new ArrayList<>(), nums, 0);
         return result;
     }
@@ -25,7 +24,7 @@ class Solution {
         for (int i = start; i < nums.length; i++) {
             list.add(nums[i]);
             backtrack(result, list, nums, i + 1);
-            list.remove(list.size() - 1);
+            list.removeLast();
         }
     }
 

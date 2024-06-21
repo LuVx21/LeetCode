@@ -5,22 +5,21 @@ package org.luvx.leetcode.java.medium._46;
  * [46] 全排列
  */
 
-// @lc code=start
-
 import java.util.ArrayList;
 import java.util.List;
 
+// @lc code=start
 class Solution {
     /**
      * 1,2,3
      */
     public List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        backtrack(result, new ArrayList<>(), nums);
+        var result = new ArrayList<List<Integer>>();
+        backtrack(nums, new ArrayList<>(), result);
         return result;
     }
 
-    private void backtrack(List<List<Integer>> result, List<Integer> list, int[] nums) {
+    private void backtrack(int[] nums, List<Integer> list, List<List<Integer>> result) {
         if (list.size() == nums.length) {
             result.add(new ArrayList<>(list));
             return;
@@ -30,8 +29,8 @@ class Solution {
                 continue;
             }
             list.add(num);
-            backtrack(result, list, nums);
-            list.remove(list.size() - 1);
+            backtrack(nums, list, result);
+            list.removeLast();
         }
     }
 }

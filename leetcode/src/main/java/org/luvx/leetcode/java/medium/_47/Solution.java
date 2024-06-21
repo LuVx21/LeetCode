@@ -5,24 +5,24 @@ package org.luvx.leetcode.java.medium._47;
  * [47] 全排列 II
  */
 
-// @lc code=start
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// @lc code=start
 class Solution {
     /**
      * 1,1,2
      */
     public List<List<Integer>> permuteUnique(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
-        backtrack(result, new ArrayList<>(), nums, new boolean[nums.length]);
+
+        var result = new ArrayList<List<Integer>>();
+        backtrack(nums, new ArrayList<>(), new boolean[nums.length], result);
         return result;
     }
 
-    private void backtrack(List<List<Integer>> result, List<Integer> list, int[] nums, boolean[] used) {
+    private void backtrack(int[] nums, List<Integer> list, boolean[] used, List<List<Integer>> result) {
         if (list.size() == nums.length) {
             result.add(new ArrayList<>(list));
             return;
@@ -33,15 +33,10 @@ class Solution {
             }
             used[i] = true;
             list.add(nums[i]);
-            backtrack(result, list, nums, used);
+            backtrack(nums, list, used, result);
             used[i] = false;
-            list.remove(list.size() - 1);
+            list.removeLast();
         }
-    }
-
-    public static void main(String[] args) {
-        Solution exec = new Solution();
-        System.out.println(exec.permuteUnique(new int[] {1, 1, 2}));
     }
 }
 // @lc code=end
