@@ -93,6 +93,13 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m503() {
+        int[] a1 = {1, 2, 1}, a2 = {1, 2, 3, 4, 3}, a3 = {1, 2, 3, 4, 3, 2};
+        int[] a4 = {1, 1, 1, 1, 1};
+        exec(503, "nextGreaterElements", a1, a2, a3, a4);
+    }
+
+    @Test
     void m560() {
         int[] array = {1, 2, 3, 0, 3};
         exec(560, "subarraySum",
