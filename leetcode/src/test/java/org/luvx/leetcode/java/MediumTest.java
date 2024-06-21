@@ -12,6 +12,11 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m17() {
+        exec(17, "letterCombinations", "23", "", "2");
+    }
+
+    @Test
     void m34() {
         int[] array = {5, 7, 7, 8, 8, 9, 10};
         exec(34, "searchRange",
