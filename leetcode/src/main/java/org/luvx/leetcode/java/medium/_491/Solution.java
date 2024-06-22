@@ -32,7 +32,7 @@ class Solution {
             if (used.contains(nums[i])) {
                 continue;
             }
-            if (list.size() == 0 || list.get(list.size() - 1) <= nums[i]) {
+            if (list.isEmpty() || list.getLast() <= nums[i]) {
                 used.add(nums[i]);
                 list.add(nums[i]);
                 helper(result, list, i + 1, nums);
@@ -53,7 +53,7 @@ class Solution {
             result.add(new ArrayList<>(list));
         }
         for (int i = index; i < nums.length; i++) {
-            if (list.size() == 0 || list.get(list.size() - 1) <= nums[i]) {
+            if (list.isEmpty() || list.getLast() <= nums[i]) {
                 list.add(nums[i]);
                 findSequence(result, list, i + 1, nums);
                 list.removeLast();

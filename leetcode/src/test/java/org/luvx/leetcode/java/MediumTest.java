@@ -80,6 +80,7 @@ class MediumTest extends BaseTest {
     void m198() {
         int[][] arg = {
                 {1, 2, 3, 1},
+                {1, 3, 1},
                 {2, 7, 9, 3, 1},
                 {2, 1, 1, 2},
         };
@@ -97,6 +98,17 @@ class MediumTest extends BaseTest {
                 4, new int[]{1, 4, 4},
                 11, new int[]{1, 1, 1, 1, 1, 1, 1, 1}
         );
+    }
+
+    @Test
+    void m300() {
+        int[][] arg = {
+                {7, 7, 7, 7, 7, 7, 7},
+                {0, 1, 0, 3, 2, 3},
+                {10, 9, 2, 5, 3, 7, 101, 18},
+                {4, 10, 4, 3, 8, 9}
+        };
+        exec(300, "lengthOfLIS", arg);
     }
 
     @Test
@@ -147,6 +159,16 @@ class MediumTest extends BaseTest {
     void m1019() {
         ListNode h1 = initLinked(2, 1, 5), h2 = initLinked(2, 7, 4, 3, 5);
         exec(1019, "nextLargerNodes", h1, h2);
+    }
+
+    @Test
+    void m1262() {
+        int[][] array = {
+                {3, 6, 5, 1, 8},
+                {4},
+                {1, 2, 3, 4, 4}
+        };
+        exec(1262, "maxSumDivThree", array);
     }
 
     @Test

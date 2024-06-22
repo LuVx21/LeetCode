@@ -10,6 +10,7 @@ package org.luvx.leetcode.java.medium._64;
 class Solution {
     public int minPathSum(int[][] grid) {
         int row = grid.length, col = grid[0].length;
+        // 0-0位置到row-col位置的最小路径和
         int[][] dp = new int[row][col];
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
@@ -17,12 +18,7 @@ class Solution {
                 int i1 = i == 0 ? 0 : dp[i - 1][j];
                 // 左侧的
                 int i2 = j == 0 ? 0 : dp[i][j - 1];
-                int min = 0;
-                if (i != 0 && j != 0) {
-                    min = Math.min(i1, i2);
-                } else {
-                    min = i1 + i2;
-                }
+                int min = i != 0 && j != 0 ? Math.min(i1, i2) : i1 + i2;
                 dp[i][j] = min + grid[i][j];
             }
         }
@@ -50,7 +46,7 @@ class Solution {
     public static void main(String[] args) {
         Solution exec = new Solution();
         // int[][] array = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
-        int[][] array = new int[][] {{1, 2, 3}, {4, 5, 6}};
+        int[][] array = new int[][]{{1, 2, 3}, {4, 5, 6}};
         System.out.println(exec.minPathSum(array));
     }
 }

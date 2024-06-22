@@ -1,3 +1,4 @@
+package org.luvx.leetcode.java.medium._55;
 /*
  * @lc app=leetcode.cn id=55 lang=java
  *
@@ -12,9 +13,7 @@ class Solution {
      *     2,3,1,1,4 -> true
      *     3,2,1,0,4 -> false
      * </pre>
-     *
-     * @param nums
-     * @return
+     * #贪心
      */
     public boolean canJump(int[] nums) {
         int reachable = 0;

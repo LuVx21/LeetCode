@@ -61,13 +61,11 @@ public class Solution {
         int bbb = bb.size() - 1;
 
         while (true) {
-            if (aa.get(aaa) == bb.get(bbb)) {
-                aaa--;
-                bbb--;
-                continue;
-            } else {
+            if (aa.get(aaa) != bb.get(bbb)) {
                 return aa.get(aaa).next;
             }
+            aaa--;
+            bbb--;
         }
     }
 

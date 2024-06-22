@@ -17,20 +17,32 @@ class Solution {
      * 2 1 1 2   => 4
      */
     public int rob(int[] nums) {
-        // region 动态规划
         if (nums.length == 1) {
             return nums[0];
         }
-        // 从第i个房屋开始向右偷的最高金额
-        int[] dp = new int[nums.length];
-        dp[nums.length - 1] = nums[nums.length - 1];
-        dp[nums.length - 2] = Math.max(nums[nums.length - 2], nums[nums.length - 1]);
+
+        // region 状态压缩优化
+        int last = nums[nums.length - 1];
+        int lastSecond = Math.max(nums[nums.length - 2], last);
         for (int i = nums.length - 3; i >= 0; i--) {
-            int ii = nums[i] + dp[i + 2];
-            int jj = dp[i + 1];
-            dp[i] = Math.max(ii, jj);
+            var t = lastSecond;
+            lastSecond = Math.max(lastSecond, nums[i] + last);
+            last = t;
         }
-        return dp[0];
+        return lastSecond;
+        // endregion
+
+        // region 动态规划
+        // 从第i个房屋开始向右偷的最高金额
+        // int[] dp = new int[nums.length];
+        // dp[nums.length - 1] = nums[nums.length - 1];
+        // dp[nums.length - 2] = Math.max(nums[nums.length - 2], nums[nums.length - 1]);
+        // for (int i = nums.length - 3; i >= 0; i--) {
+        //     int ii = nums[i] + dp[i + 2];
+        //     int jj = dp[i + 1];
+        //     dp[i] = Math.max(ii, jj);
+        // }
+        // return dp[0];
         // endregion
 
         // region 缓存(4个房屋, 函数调用了9次)

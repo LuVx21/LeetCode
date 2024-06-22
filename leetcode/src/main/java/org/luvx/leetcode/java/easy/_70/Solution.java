@@ -17,13 +17,13 @@ class Solution {
         if (n > 0 && n <= 2) {
             return n;
         }
-        int[] mem = new int[n];
-        mem[0] = 1;
-        mem[1] = 2;
+        int[] dp = new int[n];
+        dp[0] = 1;
+        dp[1] = 2;
         for (int i = 2; i < n; i++) {
-            mem[i] = mem[i - 1] + mem[i - 2];
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
-        return mem[n - 1];
+        return dp[n - 1];
     }
 
     /*
