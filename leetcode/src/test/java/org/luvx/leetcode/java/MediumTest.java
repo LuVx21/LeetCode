@@ -77,6 +77,16 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m198() {
+        int[][] arg = {
+                {1, 2, 3, 1},
+                {2, 7, 9, 3, 1},
+                {2, 1, 1, 2},
+        };
+        exec(198, "rob", arg);
+    }
+
+    @Test
     void m201() {
         exec(201, "rangeBitwiseAnd", 5, 7, 0, 0, 1, 2147483646);
     }
