@@ -167,6 +167,11 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m1049() {
+        exec(1049, "lastStoneWeightII", array(2, 7, 4, 1, 8, 1), array(31, 26, 33, 21, 40));
+    }
+
+    @Test
     void m1262() {
         int[][] array = {
                 {3, 6, 5, 1, 8},
