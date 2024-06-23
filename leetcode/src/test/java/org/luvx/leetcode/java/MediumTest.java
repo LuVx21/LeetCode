@@ -38,6 +38,11 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m55() {
+        exec(55, "canJump3", array(2, 3, 1, 1, 4), array(3, 2, 1, 0, 4), array(3, 2, 2, 0, 4));
+    }
+
+    @Test
     void m71() {
         exec(71, "simplifyPath", "/home/", "/../", "/home//foo/",
                 "/a/./b/../../c/", "/a/./b//../../c/");
