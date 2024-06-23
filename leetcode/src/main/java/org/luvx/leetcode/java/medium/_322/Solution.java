@@ -10,13 +10,13 @@ class Solution {
     /**
      * 迭代: [1,2,5],11
      * [1,3,97,98],100
-     * <pre>
-     *   97 98 99 100
-     *   1  1  2
-     * </pre>
      * <p>
-     * 完全背包问题
-     * 大数组array: 每个槽位均为大小为i的背包, 值为此背包的硬币数量
+     * 完全背包问题:
+     * 硬币面值对应石头的价值,
+     * 正数amount对应装入背包中的总价值,
+     * 求最少硬币数对应求石头的最小重量(单个石头重量对应都为1)
+     * <p>
+     * 大数组dp: 每个槽位均为大小为i的背包, 值为此背包的硬币数量
      * <p>
      * i: 既是数组的下标也是一个整钱金额
      * cost: 组成i金额所需硬币最少数量, -1则代表无法组成i金额
@@ -26,42 +26,49 @@ class Solution {
         if (amount < 1) {
             return 0;
         }
-        int[] array = new int[amount + 1];
+        // dp[j] = 凑成金额j(背包大小)所需最少硬币数量
+        int[] dp = new int[amount + 1];
         for (int i = 1; i <= amount; i++) {
             int cost = -1;
             for (int coin : coins) {
-                if (coin <= i && array[i - coin] != -1) {
-                    int temp = array[i - coin] + 1;
+                int m = i - coin;
+                if (coin <= i && dp[m] != -1) {
+                    int temp = dp[m] + 1;
                     cost = cost < 0 ? temp : Math.min(temp, cost);
                 }
             }
-            array[i] = cost;
+            dp[i] = cost;
         }
-        return array[amount];
+        return dp[amount];
     }
 
     /**
      * 递归
      */
     public int coinChange1(int[] coins, int amount) {
-        if (amount < 1)
+        if (amount < 1) {
             return 0;
-        return helper(coins, amount, new int[amount]);
+        }
+        return backtrack(coins, amount, new int[amount]);
     }
 
-    private int helper(int[] coins, int amount, int[] count) {
-        if (amount < 0)
+    private int backtrack(int[] coins, int amount, int[] count) {
+        if (amount < 0) {
             return -1;
-        if (amount == 0)
+        }
+        if (amount == 0) {
             return 0;
-        if (count[amount - 1] != 0)
+        }
+        if (count[amount - 1] != 0) {
             return count[amount - 1];
+        }
         int min = Integer.MAX_VALUE;
 
         for (int coin : coins) {
-            int res = helper(coins, amount - coin, count);
-            if (res >= 0 && res < min)
+            int res = backtrack(coins, amount - coin, count);
+            if (res >= 0 && res < min) {
                 min = 1 + res;
+            }
         }
         count[amount - 1] = (min == Integer.MAX_VALUE) ? -1 : min;
         return count[amount - 1];
