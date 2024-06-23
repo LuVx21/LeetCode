@@ -1,8 +1,11 @@
+package org.luvx.leetcode.java.medium._322;
 /*
  * @lc app=leetcode.cn id=322 lang=java
  *
  * [322] 零钱兑换
  */
+
+// @lc code=start
 class Solution {
     /**
      * 迭代: [1,2,5],11
@@ -41,14 +44,18 @@ class Solution {
      * 递归
      */
     public int coinChange1(int[] coins, int amount) {
-        if (amount < 1) return 0;
+        if (amount < 1)
+            return 0;
         return helper(coins, amount, new int[amount]);
     }
 
     private int helper(int[] coins, int amount, int[] count) {
-        if (amount < 0) return -1;
-        if (amount == 0) return 0;
-        if (count[amount - 1] != 0) return count[amount - 1];
+        if (amount < 0)
+            return -1;
+        if (amount == 0)
+            return 0;
+        if (count[amount - 1] != 0)
+            return count[amount - 1];
         int min = Integer.MAX_VALUE;
 
         for (int coin : coins) {
@@ -60,3 +67,4 @@ class Solution {
         return count[amount - 1];
     }
 }
+// @lc code=end
