@@ -14,7 +14,7 @@ public class MergeSort {
      * 递归实现的归并排序(自顶向下)
      *
      * @param array 待排序数组
-     * @param left 起点
+     * @param left  起点
      * @param right 终点
      */
     public static void MergeSortRecursion(int[] array, int left, int right) {
@@ -30,7 +30,7 @@ public class MergeSort {
     /**
      * 非递归(迭代)实现的归并排序(自底向上)
      *
-     * @param array 待排序数组
+     * @param array  待排序数组
      * @param length 长度
      */
     public static void MergeSortIteration(int[] array, int length) {
@@ -54,8 +54,8 @@ public class MergeSort {
      * 合并子有序数组
      *
      * @param array 待排序数组
-     * @param left 起点
-     * @param mid 中点
+     * @param left  起点
+     * @param mid   中点
      * @param right 终点
      */
     private static void Merge(int[] array, int left, int mid, int right) {

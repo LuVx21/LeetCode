@@ -9,7 +9,9 @@ import java.util.List;
 public class SortTest {
     int[]       array  = {5, 4, 3, 2, 1};
     int[]       array1 = {3, 2, 1, 6, 5, 7, 4};
-    List<int[]> list   = List.of(array, array1);
+    List<int[]> list   = List.of(array, array1,
+            new int[]{1, 4, 2, 5, 6, 7, 9, 3}
+    );
 
     @Test
     public void test0() {
@@ -41,7 +43,7 @@ public class SortTest {
     @AfterEach
     public void after() {
         list.forEach(array -> {
-            System.out.println(Arrays.toString(array));
+            System.out.println("有序:" + Arrays.toString(array));
         });
     }
 }
