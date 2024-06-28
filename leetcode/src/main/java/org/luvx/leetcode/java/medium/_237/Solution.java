@@ -1,4 +1,4 @@
-package org.luvx.leetcode.java.easy._237;
+package org.luvx.leetcode.java.medium._237;
 /*
  * @lc app=leetcode.cn id=237 lang=java
  *
