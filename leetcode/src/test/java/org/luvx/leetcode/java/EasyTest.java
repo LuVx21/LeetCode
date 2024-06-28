@@ -16,6 +16,13 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m108() {
+        exec(108, "sortedArrayToBST", array(-10, -3, 0, 5, 9), array(1, 3),
+                array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17)
+        );
+    }
+
+    @Test
     void m191() {
         exec(191, "hammingWeight", 11, 128, 2147483645);
     }
