@@ -1,29 +1,18 @@
+package org.luvx.leetcode.java.easy._100;
 /*
  * @lc app=leetcode.cn id=100 lang=java
  *
  * [100] 相同的树
  */
 
-// @lc code=start
+import org.luvx.leetcode.tree.TreeNode;
 
-/**
- * Definition for a binary tree node.
- * <pre>
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- * </pre>
- */
+import java.util.Stack;
+
+// @lc code=start
 class Solution {
     /**
      * 递归方式
-     *
-     * @param p
-     * @param q
-     * @return
      */
     public boolean isSameTree1(TreeNode p, TreeNode q) {
         if (p == q) {
@@ -40,10 +29,6 @@ class Solution {
 
     /**
      * 非递归方式
-     *
-     * @param p
-     * @param q
-     * @return
      */
     public boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == q) {

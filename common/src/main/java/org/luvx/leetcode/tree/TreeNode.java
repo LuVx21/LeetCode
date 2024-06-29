@@ -2,12 +2,12 @@ package org.luvx.leetcode.tree;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
+import org.luvx.leetcode.util.TreeUtils;
 
 /**
  * @author Ren, Xie
  */
-@ToString
+// @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class TreeNode {
@@ -33,5 +33,11 @@ public class TreeNode {
 
     public boolean isLeaf() {
         return left == null && right == null;
+    }
+
+    @Override
+    public String toString() {
+        TreeUtils.printTree(this);
+        return STR."\{left == null ? "null" : left.val}<-\{val}->\{right == null ? "null" : right.val}";
     }
 }
