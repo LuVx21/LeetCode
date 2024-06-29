@@ -1,21 +1,25 @@
+package org.luvx.leetcode.java.easy._350;
 /*
  * @lc app=leetcode.cn id=350 lang=java
  *
  * [350] 两个数组的交集 II
  */
+
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
-class Solution {
 
+// @lc code=start
+class Solution {
     public int[] intersect(int[] nums1, int[] nums2) {
-        HashSet<Integer> set = new HashSet<>();
-        List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < nums1.length; i++) {
-            set.add(nums1[i]);
+        var set = new HashSet<Integer>();
+        for (int k : nums1) {
+            set.add(k);
         }
-        for (int j = 0; j < nums2.length; j++) {
-            if (set.contains(nums2[j])) {
-                list.add(nums2[j]);
+
+        List<Integer> list = new ArrayList<>();
+        for (int i : nums2) {
+            if (set.contains(i)) {
+                list.add(i);
             }
         }
 
@@ -23,8 +27,7 @@ class Solution {
     }
 
     public int[] intersect0(int[] nums1, int[] nums2) {
-        int l1 = nums1.length;
-        int l2 = nums2.length;
+        int l1 = nums1.length, l2 = nums2.length;
         if (l1 == 0 || l2 == 0) {
             return new int[0];
         }
@@ -32,12 +35,10 @@ class Solution {
         Arrays.sort(nums2);
 
         List<Integer> result = new ArrayList<>();
-        // Set<Integer> result = new LinkedHashSet<>();
 
         int i = 0, j = 0;
         while (i < l1 && j < l2) {
-            int aa = nums1[i];
-            int bb = nums2[j];
+            int aa = nums1[i], bb = nums2[j];
             if (aa == bb) {
                 result.add(aa);
                 i++;
@@ -98,4 +99,5 @@ class Solution {
         return array;
     }
 }
+// @lc code=end
 
