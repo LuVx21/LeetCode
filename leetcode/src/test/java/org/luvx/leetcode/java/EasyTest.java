@@ -16,6 +16,13 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m104() {
+        TreeNode root = TreeUtils.buildCBT(3, 9, 20, null, null, 15, 7);
+        TreeNode root1 = TreeUtils.buildCBT(1, null, 2);
+        exec(104, "maxDepth", root, root1);
+    }
+
+    @Test
     void m108() {
         exec(108, "sortedArrayToBST", array(-10, -3, 0, 5, 9), array(1, 3),
                 array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17)
@@ -35,8 +42,7 @@ class EasyTest extends BaseTest {
 
     @Test
     void m226() {
-        int[] array = {4, 2, 7, 1, 3, 6, 9};
-        TreeNode root = TreeUtils.buildCBT(array);
+        TreeNode root = TreeUtils.buildCBT(4, 2, 7, 1, 3, 6, 9);
 
         TreeNode root1 = TreeNode.of(2, TreeNode.of(1), TreeNode.of(3));
         exec(226, "invertTree", root, root1);

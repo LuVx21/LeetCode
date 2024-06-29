@@ -1,7 +1,7 @@
 package org.luvx.leetcode.java.medium._107;
 
-import org.luvx.leetcode.tree.TreeNode
 import org.luvx.coding.common.enhancer.out
+import org.luvx.leetcode.tree.TreeNode
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 
@@ -37,7 +37,6 @@ class SolutionTest {
     @Test
     fun levelOrderBottom() {
         val exec = Solution()
-        exec.levelOrderBottom(root).out()
         exec.levelOrderBottom1(root).out()
     }
 }
