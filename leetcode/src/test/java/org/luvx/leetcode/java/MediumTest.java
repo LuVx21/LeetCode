@@ -2,6 +2,8 @@ package org.luvx.leetcode.java;
 
 import org.junit.jupiter.api.Test;
 import org.luvx.leetcode.link.ListNode;
+import org.luvx.leetcode.tree.TreeNode;
+import org.luvx.leetcode.util.TreeUtils;
 
 import static org.luvx.leetcode.util.LinkUtils.initLinked;
 
@@ -52,6 +54,16 @@ class MediumTest extends BaseTest {
     void m74() {
         int[][] array1 = {{1, 3, 5, 7}, {10, 11, 16, 20}, {23, 30, 34, 60}};
         exec(74, "searchMatrix", array1, 3, array1, 13);
+    }
+
+    @Test
+    void m114() {
+        TreeNode root = TreeUtils.buildCBT(1, 2, 5, 3, 4, null, 6);
+        TreeNode root2 = TreeUtils.buildCBT(0);
+        exec(114, "flatten"
+                , root
+                , root2
+        );
     }
 
     @Test

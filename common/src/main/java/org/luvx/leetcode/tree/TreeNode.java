@@ -37,7 +37,6 @@ public class TreeNode {
 
     @Override
     public String toString() {
-        TreeUtils.printTree(this);
-        return STR."\{left == null ? "null" : left.val}<-\{val}->\{right == null ? "null" : right.val}";
+        return TreeUtils.printTree(this);
     }
 }

@@ -1,7 +1,6 @@
 package org.luvx.leetcode.util;
 
 import com.google.common.collect.Lists;
-import org.luvx.coding.common.more.MorePrints;
 import org.luvx.leetcode.tree.TreeNode;
 
 import jakarta.annotation.Nullable;
@@ -18,6 +17,9 @@ public class TreeUtils {
      */
     public static TreeNode buildCBT(Integer... array) {
         int length = array.length;
+        if (length == 0) {
+            return null;
+        }
         if (length == 1) {
             return TreeNode.of(array[0]);
         }
@@ -71,9 +73,9 @@ public class TreeUtils {
     /**
      * 输出二叉树的树形结构
      */
-    public static void printTree(TreeNode root) {
+    public static String printTree(TreeNode root) {
         if (root == null) {
-            return;
+            return "";
         }
 
         List<List<Integer>> levelRows = Lists.newArrayList();
@@ -109,61 +111,94 @@ public class TreeUtils {
                     row.add(null);
                 }
             }
-            levelRows.add(row);
+            if (!next.isEmpty()) {
+                levelRows.add(row);
+            }
             queue = next;
         }
-        for (List<Integer> row : levelRows) {
-            System.out.println(row);
-        }
-        System.out.println("-".repeat(150));
-        dumpTreeFormat0(levelRows);
-        System.out.println("-".repeat(150));
-        dumpTreeFormat(levelRows);
+        // for (List<Integer> row : levelRows) {
+        //     System.out.println(row);
+        // }
+        String line = "-".repeat(150);
+        return dumpTreeFormat0(levelRows)
+                .append(line).append("\n")
+                .append(dumpTreeFormat(levelRows))
+                .append(line).append("\n")
+                .toString()
+                ;
     }
 
-    private static void dumpTreeFormat0(List<List<Integer>> rowList) {
-        int pow = (int) Math.pow(2, rowList.size() - 1);
+    private static StringBuilder dumpTreeFormat0(List<List<Integer>> rowList) {
+        int width = 2;
+        for (List<Integer> a : rowList) {
+            for (Integer i : a) {
+                String s = i == null ? "" : String.valueOf(i);
+                width = Math.max(width, s.length());
+            }
+        }
+        final String space = " ".repeat(width);
 
+        StringBuilder sb = new StringBuilder("\n");
+        int length = (int) Math.pow(2, rowList.size()) - 1;
         for (int i = 0; i < rowList.size(); i++) {
-            int step = (int) Math.pow(2, rowList.size() - 1 - i);
-            String[] row = new String[pow];
-            Arrays.fill(row, "    ");
+            String[] row = new String[length];
+            Arrays.fill(row, space);
+
+            int step = (int) Math.pow(2, rowList.size() - i), start = (step >> 1) - 1;
             List<Integer> vals = rowList.get(i);
             for (int j = 0; j < vals.size(); j++) {
                 Integer v = vals.get(j);
-                row[j * step] = v == null ? "    " : String.format("%4d", v);
+                int k = start + step * j;
+                row[k] = v == null ? space : String.format(STR."%\{width}d", v);
             }
-            System.out.println(STR."No.\{i}|\{String.join("", row)}");
+            // if (i == 0) {
+            //     String[] r = new String[length];
+            //     for (int j = 0; j < r.length; j++) {
+            //         r[j] = String.format(STR."%\{width}d", j);
+            //     }
+            //     System.out.println(STR."层id|\{String.join("", r)}");
+            // }
+            // System.out.println(STR."No.\{i}|\{String.join("", row)}".trim());
+            sb.append(STR."No.\{i}|\{String.join("", row)}".trim()).append("\n");
         }
+        return sb;
     }
 
-    private static void dumpTreeFormat(List<List<Integer>> rowList) {
+    private static StringBuilder dumpTreeFormat(List<List<Integer>> rowList) {
         int width = rowList.size();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < rowList.size(); i++) {
             // 填充左侧空格
             String prefix = "  ".repeat(width - i - 1);
-            System.out.print(prefix);
+            // System.out.print(prefix);
+            sb.append(prefix);
 
             // 从第二层开始, 节点连接符
             List<Integer> row = rowList.get(i);
             if (i >= 1) {
                 for (int j = 0; j < row.size(); j++) {
                     String s = row.get(j) == null ? "  " : ((j & 1) == 0 ? " / " : "\\  ");
-                    System.out.print(s);
+                    // System.out.print(s);
+                    sb.append(s);
                 }
-                System.out.println();
-                System.out.print(prefix);
+                // System.out.println();
+                // System.out.print(prefix);
+                sb.append("\n").append(prefix);
             }
             // 填充数字
             for (Integer v : row) {
-                System.out.print(v == null ? "  " : v + "   ");
+                // System.out.print(v == null ? "  " : v + "   ");
+                sb.append(v == null ? "  " : v + "   ");
             }
-            System.out.println();
+            // System.out.println();
+            sb.append("\n");
         }
+        return sb;
     }
 
     public static void main(String[] args) {
-        TreeNode root = buildCBT(3, 9, 2, 7, 8, 5, 7, null, null, null, null, 1, 2, 6, 8);
+        TreeNode root = buildBST(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17);
+        // TreeNode root = buildCBT(3, 9, 2, 7, 8, 5, 7, null, null, null, null, 1, 2, 6, 8);
         printTree(root);
     }
 }
