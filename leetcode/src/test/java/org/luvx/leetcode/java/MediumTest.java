@@ -118,6 +118,17 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m236() {
+        TreeNode root = TreeUtils.buildCBT(3, 5, 1, 6, 2, 0, 8, null, null, 7, 4);
+        TreeNode root1 = TreeUtils.buildCBT(1, 2);
+        exec(236, "lowestCommonAncestor",
+                root, root.left, root.right
+                , root, root.left, root.left.right.right
+                , root1, root1, root1.left
+        );
+    }
+
+    @Test
     void m300() {
         int[][] arg = {
                 {7, 7, 7, 7, 7, 7, 7},

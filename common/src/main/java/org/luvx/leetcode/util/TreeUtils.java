@@ -159,7 +159,7 @@ public class TreeUtils {
             //     System.out.println(STR."层id|\{String.join("", r)}");
             // }
             // System.out.println(STR."No.\{i}|\{String.join("", row)}".trim());
-            sb.append(STR."No.\{i}|\{String.join("", row)}".trim()).append("\n");
+            sb.append(STR."No.\{i}|\{String.join("", row)}".trim()).append("\n\n");
         }
         return sb;
     }
