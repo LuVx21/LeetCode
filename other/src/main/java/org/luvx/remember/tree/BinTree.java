@@ -1,5 +1,7 @@
 package org.luvx.remember.tree;
 
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+import it.unimi.dsi.fastutil.ints.IntList;
 import org.luvx.leetcode.tree.TreeNode;
 
 import java.util.ArrayDeque;
@@ -60,6 +62,8 @@ public class BinTree {
         }
     }
 
+    // region 中序遍历
+
     /**
      * 中序遍历:递归方式
      *
@@ -93,6 +97,26 @@ public class BinTree {
             root = root.right;
         }
     }
+
+    public static IntList inSearchByLoop1(TreeNode root) {
+        if (root == null) {
+            return IntList.of();
+        }
+
+        IntArrayList list = new IntArrayList();
+        Stack<TreeNode> stack = new Stack<>();
+        while (root != null || !stack.empty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            list.add(root.val);
+            root = root.right;
+        }
+        return list;
+    }
+    // endregion
 
 
     /**
@@ -145,8 +169,8 @@ public class BinTree {
         Queue<TreeNode> queue = new ArrayDeque<>();
         queue.add(root);
         TreeNode temp = null;
-        int currentLevel = 1;    //记录当前层需要打印的节点的数量
-        int nextLevel = 0;//记录下一层需要打印的节点的数量
+        int currentLevel = 1;    // 记录当前层需要打印的节点的数量
+        int nextLevel = 0;// 记录下一层需要打印的节点的数量
         while ((temp = queue.poll()) != null) {
             System.out.print(temp.val + " ");
 

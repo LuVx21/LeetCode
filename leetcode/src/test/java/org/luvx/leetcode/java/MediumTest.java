@@ -57,6 +57,14 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m98() {
+        TreeNode root = TreeUtils.buildCBT(5, 4, 6, null, null, 3, 7);
+        // TreeNode root = TreeUtils.buildCBT(2, 1, 3);
+        TreeNode root1 = TreeUtils.buildCBT(5, 1, 4, null, null, 3, 6);
+        exec(98, "isValidBST", root, root1);
+    }
+
+    @Test
     void m114() {
         TreeNode root = TreeUtils.buildCBT(1, 2, 5, 3, 4, null, 6);
         TreeNode root2 = TreeUtils.buildCBT(0);
