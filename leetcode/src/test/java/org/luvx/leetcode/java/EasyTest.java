@@ -131,6 +131,14 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m530() {
+        TreeNode root1 = TreeUtils.buildCBT(236, 104, 701, null, 227, null, 911);
+        // TreeNode root1 = TreeUtils.buildCBT(4, 2, 6, 1, 3);
+        TreeNode root2 = TreeUtils.buildCBT(1, 0, 48, null, null, 12, 49);
+        exec(530, "getMinimumDifference", root1, root2);
+    }
+
+    @Test
     void m559() {
         Node root = Node.of(1,
                 Node.of(3, Node.of(5, Node.of(7)), Node.of(6)),
