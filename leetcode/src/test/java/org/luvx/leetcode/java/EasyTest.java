@@ -198,6 +198,16 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m938() {
+        TreeNode root = TreeUtils.buildCBT(10, 5, 15, 3, 7, null, 18);
+        TreeNode root1 = TreeUtils.buildCBT(10, 5, 15, 3, 7, 13, 18, 1, null, 6);
+        exec(938, "rangeSumBST"
+                , root, 7, 15
+                , root1, 6, 10
+        );
+    }
+
+    @Test
     void m977() {
         int[][] h = {{-4, -1, 0, 3, 10}, {-7, -3, 2, 3, 11}, {-3}};
         exec(977, "sortedSquares", h);
