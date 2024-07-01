@@ -155,6 +155,12 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m653() {
+        TreeNode root = TreeUtils.buildCBT(5, 3, 6, 2, 4, null, 7);
+        exec(653, "findTarget", root, 9, root, 28);
+    }
+
+    @Test
     void m697() {
         int[] array = {1, 2, 2, 3, 1, 4, 2};
         int[] array1 = {1, 2, 2, 3, 1};
