@@ -118,6 +118,12 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m501() {
+        TreeNode root = TreeUtils.buildCBT(1, 0, 1, 0, 0, 1, 1, 0);
+        exec(501, "findMode", root);
+    }
+
+    @Test
     void m504() {
         exec(504, "convertToBase7", 101, -7, 7, 3, -3, 0, 1, -1);
     }
