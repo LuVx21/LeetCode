@@ -65,6 +65,13 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m102() {
+        TreeNode root = TreeUtils.buildCBT(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, null, null, 1);
+        TreeNode root1 = TreeUtils.buildCBT(3, 9, 20, null, null, 15, 7);
+        exec(102, "levelOrder", root, root1);
+    }
+
+    @Test
     void m114() {
         TreeNode root = TreeUtils.buildCBT(1, 2, 5, 3, 4, null, 6);
         TreeNode root2 = TreeUtils.buildCBT(0);

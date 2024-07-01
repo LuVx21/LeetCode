@@ -9,7 +9,18 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
+/**
+ * 前序遍历 {@link org.luvx.leetcode.java.medium._144.Solution}
+ * <p>
+ * 中序遍历 {@link org.luvx.leetcode.java.medium._94.Solution}
+ * <p>
+ * 后序遍历 {@link org.luvx.leetcode.java.medium._145.Solution}
+ * <p>
+ * 层级遍历: {@link org.luvx.leetcode.java.medium._102.Solution}
+ */
 public class BinTree {
+    // region 前序遍历
+
     /**
      * 前序遍历:递归方式
      *
@@ -61,6 +72,7 @@ public class BinTree {
                 stack.push(root.left);
         }
     }
+    // endregion
 
     // region 中序遍历
 
@@ -119,6 +131,8 @@ public class BinTree {
     // endregion
 
 
+    // region 后序遍历
+
     /**
      * 后序遍历:递归方式
      *
@@ -159,11 +173,12 @@ public class BinTree {
             }
         }
     }
+    // endregion
+
+    // region 层级遍历
 
     /**
      * 层级遍历
-     *
-     * @param root
      */
     public static void levelSearch(TreeNode root) {
         Queue<TreeNode> queue = new ArrayDeque<>();
@@ -195,8 +210,6 @@ public class BinTree {
 
     /**
      * 层级遍历
-     *
-     * @param root 根节点
      */
     public static void levelOrder(TreeNode root) {
         TreeNode temp;
@@ -212,4 +225,5 @@ public class BinTree {
             }
         }
     }
+    // endregion
 }

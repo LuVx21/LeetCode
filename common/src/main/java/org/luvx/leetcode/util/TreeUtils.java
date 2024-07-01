@@ -3,9 +3,11 @@ package org.luvx.leetcode.util;
 import com.google.common.collect.Lists;
 import org.luvx.leetcode.tree.TreeNode;
 
+import jakarta.annotation.Nonnull;
 import jakarta.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Queue;
 
 public class TreeUtils {
 
@@ -15,10 +17,11 @@ public class TreeUtils {
      *
      * @param array 二叉树的完全二叉树形式的数组(二叉树层次遍历的顺序)
      */
+    @Nonnull
     public static TreeNode buildCBT(Integer... array) {
         int length = array.length;
         if (length == 0) {
-            return null;
+            throw new IllegalArgumentException("无参数");
         }
         if (length == 1) {
             return TreeNode.of(array[0]);
@@ -79,42 +82,30 @@ public class TreeUtils {
         }
 
         List<List<Integer>> levelRows = Lists.newArrayList();
-        levelRows.add(Lists.newArrayList(root.val));
-        List<TreeNode> queue = Lists.newArrayList(root);
-        // queue.add(root);
+        Queue<TreeNode> queue = Lists.newLinkedList();
+        queue.offer(root);
 
-        while (!queue.isEmpty()) {
-            List<Integer> row = Lists.newArrayList();
-            if (!levelRows.isEmpty()) {
-                for (Integer val : levelRows.getLast()) {
-                    if (val == null) {
-                        row.add(null);
-                        row.add(null);
-                    }
-                }
-            }
-
-            List<TreeNode> next = Lists.newArrayList();
-            for (TreeNode node : queue) {
-                TreeNode left = node.left, right = node.right;
-                if (left != null) {
-                    next.add(left);
-                    row.add(left.val);
-                } else {
+        for (int k = 0; !queue.isEmpty(); k++) {
+            boolean isBreak = true;
+            final int size = queue.size();
+            List<Integer> row = Lists.newArrayListWithCapacity(1 << k);
+            for (int i = 0; i < size; i++) {
+                var node = queue.poll();
+                if (node == null) {
                     row.add(null);
-                }
-
-                if (right != null) {
-                    next.add(right);
-                    row.add(right.val);
+                    queue.offer(null);
+                    queue.offer(null);
                 } else {
-                    row.add(null);
+                    isBreak &= node.isLeaf();
+                    row.add(node.val);
+                    queue.offer(node.left);
+                    queue.offer(node.right);
                 }
             }
-            if (!next.isEmpty()) {
-                levelRows.add(row);
+            levelRows.add(row);
+            if (isBreak) {
+                break;
             }
-            queue = next;
         }
         // for (List<Integer> row : levelRows) {
         //     System.out.println(row);
@@ -197,8 +188,10 @@ public class TreeUtils {
     }
 
     public static void main(String[] args) {
-        TreeNode root = buildBST(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17);
-        // TreeNode root = buildCBT(3, 9, 2, 7, 8, 5, 7, null, null, null, null, 1, 2, 6, 8);
-        printTree(root);
+        List.of(
+                buildCBT(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17),
+                buildCBT(5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, null, null, 1),
+                buildCBT(3, 9, 2, 7, 8, 5, 7, null, null, null, null, 1, 2, 6, 8)
+        ).forEach(root -> System.out.println(printTree(root)));
     }
 }
