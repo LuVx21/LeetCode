@@ -13,26 +13,33 @@ class Solution {
     int result = 1;
 
     /**
+     * 动态规划(耗时低)
      * dp[i]的结果计算并不依赖dp[i-1]
      */
     public int lengthOfLIS(int[] nums) {
         if (nums.length == 0) {
             return 0;
         }
+        // dp[i]: i长度时, 最长递增子序列(可能有多个)结尾元素的最小值
         int[] dp = new int[nums.length + 1];
         dp[0] = Integer.MIN_VALUE;
         dp[1] = nums[0];
+
         int max = 1;
         for (int i = 1; i < nums.length; i++) {
-            if (dp[max] < nums[i]) {
+            int num = nums[i];
+            // 继续递增, 找到了一个更长的递增子序列, 最长的长度增加1
+            if (dp[max] < num) {
                 max++;
-                dp[max] = nums[i];
+                dp[max] = num;
                 continue;
             }
 
+            // 运行到这里, 说明连续递增中断, 往前查找到第一个比num小的元素, 其后一个置为num
+            // 此处也可使用二分查找
             for (int j = max - 1; j >= 0; j--) {
-                if (nums[i] > dp[j]) {
-                    dp[j + 1] = nums[i];
+                if (num > dp[j]) {
+                    dp[j + 1] = num;
                     break;
                 }
             }
@@ -41,29 +48,8 @@ class Solution {
     }
 
     /**
-     * 动态规划(最容易理解, 但时间复杂度在n^2)
-     */
-    public int lengthOfLIS0(int[] nums) {
-        if (nums.length == 0) {
-            return 0;
-        }
-        int[] dp = new int[nums.length];
-        dp[0] = 1;
-
-        int max = 1;
-        for (int i = 1; i < nums.length; i++) {
-            dp[i] = 1;
-            for (int j = 0; j < i; j++) {
-                if (nums[j] < nums[i]) {
-                    dp[i] = Math.max(dp[i], dp[j] + 1);
-                }
-            }
-            max = Math.max(max, dp[i]);
-        }
-        return max;
-    }
-
-    /**
+     * 二分查找+动态规划
+     * 耗时低(nlogn)
      * 10, 9, 2, 5, 3, 7, 101, 18
      * tails: [2, 3, 7, 18, 0, 0, 0, 0]
      */
@@ -71,6 +57,7 @@ class Solution {
         // 每一项 p[i] 的含义是，所有长度为 i+1 的上升子序列的末尾元素中的最小值
         int[] tails = new int[nums.length];
         tails[0] = nums[0];
+
         int max = 1; // 因为用于下标, [left,max]所表示的数据范围长度为max+1
         for (int i = 1; i < nums.length; i++) {
             int num = nums[i];
@@ -97,6 +84,30 @@ class Solution {
     }
 
     /**
+     * 动态规划(最容易理解, 但时间复杂度在n^2)
+     */
+    public int lengthOfLIS0(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        // dp[i]: i长度时,递增子序列的最长长度
+        int[] dp = new int[nums.length];
+        dp[0] = 1;
+
+        int max = 1;
+        for (int i = 1; i < nums.length; i++) {
+            dp[i] = 1;
+            for (int j = 0; j < i; j++) {
+                if (nums[j] < nums[i]) {
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
+                }
+            }
+            max = Math.max(max, dp[i]);
+        }
+        return max;
+    }
+
+    /**
      * 超时: 性能问题
      */
     public int lengthOfLIS1(int[] nums) {
@@ -118,4 +129,3 @@ class Solution {
     }
 }
 // @lc code=end
-

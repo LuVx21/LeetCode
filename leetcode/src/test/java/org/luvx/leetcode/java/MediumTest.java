@@ -222,6 +222,17 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m1143() {
+        String[] array = {
+                "abcde", "ace",
+                "abcfbc", "abfcab",
+                "programming", "contest",
+                "abcd", "mnp"
+        };
+        exec(1143, "longestCommonSubsequence", array);
+    }
+
+    @Test
     void m1262() {
         int[][] array = {
                 {3, 6, 5, 1, 8},
