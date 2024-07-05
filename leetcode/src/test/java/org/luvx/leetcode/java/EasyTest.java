@@ -58,6 +58,15 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m283() {
+        int[][] array = {
+                {0, 1, 0, 3, 12},
+                {0}
+        };
+        exec(283, "moveZeroes", array);
+    }
+
+    @Test
     void m326() {
         exec(326, "isPowerOfThree", 27, 0, 9, 45, 18);
     }
