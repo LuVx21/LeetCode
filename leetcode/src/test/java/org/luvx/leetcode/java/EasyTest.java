@@ -99,6 +99,11 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m414() {
+        exec(414, "thirdMax", array(3, 2, 1), array(1, 2), array(2, 2, 3, 1), array(3, 3, 3, 1, 2));
+    }
+
+    @Test
     void m415() {
         exec(415, "addStrings1",
                 "456", "902",
