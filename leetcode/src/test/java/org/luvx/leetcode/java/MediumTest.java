@@ -260,4 +260,9 @@ class MediumTest extends BaseTest {
                 , h2
         );
     }
+
+    @Test
+    void m3101() {
+        exec(3101, "countAlternatingSubarrays", array(0, 1, 1, 1), array(1, 0, 1, 0));
+    }
 }
