@@ -17,7 +17,11 @@ class Solution {
     public long countAlternatingSubarrays1(int[] nums) {
         long r = 1, cnt = 1;
         for (int i = 1; i < nums.length; i++) {
-            cnt = 1 + (nums[i] != nums[i - 1] ? cnt : 0);
+            if (nums[i] != nums[i - 1]) {
+                cnt++;
+            } else {
+                cnt = 1;
+            }
             r += cnt;
         }
         return r;
