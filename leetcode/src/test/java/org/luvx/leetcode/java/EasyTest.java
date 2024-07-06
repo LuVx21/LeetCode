@@ -235,6 +235,14 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m1122() {
+        exec(1122, "relativeSortArray",
+                array(2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19), array(2, 1, 4, 3, 9, 6),
+                array(28, 6, 22, 8, 44, 17), array(22, 28, 8, 6)
+        );
+    }
+
+    @Test
     void m1317() {
         exec(1317, "getNoZeroIntegers", 2, 11, 10000, 69, 1010);
     }
