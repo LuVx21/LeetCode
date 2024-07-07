@@ -156,6 +156,15 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m260() {
+        exec(260, "singleNumber",
+                array(1, 2, 1, 3, 2, 5),
+                array(-1, 0),
+                array(0, 1)
+        );
+    }
+
+    @Test
     void m300() {
         int[][] arg = {
                 {7, 7, 7, 7, 7, 7, 7},
