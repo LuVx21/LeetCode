@@ -1,5 +1,6 @@
 package org.luvx.leetcode.java;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.luvx.leetcode.link.ListNode;
 import org.luvx.leetcode.tree.TreeNode;
@@ -7,10 +8,21 @@ import org.luvx.leetcode.util.TreeUtils;
 
 import static org.luvx.leetcode.util.LinkUtils.initLinked;
 
+@Slf4j
 class MediumTest extends BaseTest {
     @Test
     void m3() {
         exec(3, "lengthOfLongestSubstring", "abcabcbb", "pwwkew", "dvdf");
+    }
+
+    @Test
+    void m6() {
+        exec(6, "convert"
+                , "PAYPALISHIRING", 3
+                , "PAYPALISHIRING", 4
+                , "PAYPALISHIRING", 5
+                , "A", 1
+        );
     }
 
     @Test
