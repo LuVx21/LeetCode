@@ -30,6 +30,20 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void _110() {
+        TreeNode root = TreeUtils.buildCBT(3, 9, 20, null, null, 15, 7);
+        TreeNode root1 = TreeUtils.buildCBT(1, 2, 2, 3, 3, null, null, 4, 4);
+        exec(110, "isBalanced", root, root1);
+    }
+
+    @Test
+    void _111() {
+        TreeNode root = TreeUtils.buildCBT(3, 9, 20, null, null, 15, 7);
+        TreeNode root1 = TreeUtils.buildCBT(2, null, 3, null, 4, null, 5, null, 6);
+        exec(111, "minDepth", root, root1);
+    }
+
+    @Test
     void m191() {
         exec(191, "hammingWeight", 11, 128, 2147483645);
     }
