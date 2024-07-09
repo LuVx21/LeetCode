@@ -290,6 +290,13 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m2816() {
+        ListNode h1 = initLinked(1, 8, 9);
+        ListNode h2 = initLinked(9, 9, 9);
+        exec(2816, "doubleIt", h1, h2);
+    }
+
+    @Test
     void m3101() {
         exec(3101, "countAlternatingSubarrays", array(0, 1, 1, 1), array(1, 0, 1, 0));
     }
