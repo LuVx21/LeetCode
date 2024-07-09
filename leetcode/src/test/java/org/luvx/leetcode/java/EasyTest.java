@@ -159,6 +159,11 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m557() {
+        exec(557, "reverseWords", "Let's take LeetCode contest", "Mr Ding", "void swap(char[] array, int i, int j) {", "I love u");
+    }
+
+    @Test
     void m559() {
         Node root = Node.of(1,
                 Node.of(3, Node.of(5, Node.of(7)), Node.of(6)),
