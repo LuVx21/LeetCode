@@ -72,6 +72,13 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void _257() {
+        TreeNode root = TreeUtils.buildCBT(1, 2, 3, null, 5);
+        TreeNode root1 = TreeUtils.buildCBT(1);
+        exec(257, "binaryTreePaths1", root, root1);
+    }
+
+    @Test
     void m283() {
         int[][] array = {
                 {0, 1, 0, 3, 12},
