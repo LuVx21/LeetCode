@@ -283,6 +283,13 @@ class MediumTest extends BaseTest {
     }
 
     @Test
+    void m2807() {
+        ListNode h1 = initLinked(18, 6, 10, 3);
+        ListNode h2 = initLinked(7);
+        exec(2807, "insertGreatestCommonDivisors", h1, h2);
+    }
+
+    @Test
     void m3101() {
         exec(3101, "countAlternatingSubarrays", array(0, 1, 1, 1), array(1, 0, 1, 0));
     }
