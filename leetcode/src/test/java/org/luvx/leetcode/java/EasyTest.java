@@ -195,6 +195,14 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void _617() {
+        TreeNode root0 = TreeUtils.buildCBT(1, 3, 2, 5), root1 = TreeUtils.buildCBT(2, 1, 3, null, 4, null, 7);
+        TreeNode root2 = TreeUtils.buildCBT(1), root3 = TreeUtils.buildCBT(1, 2);
+        exec(617, "mergeTrees", root0, root1,
+                root2, root3);
+    }
+
+    @Test
     void m653() {
         TreeNode root = TreeUtils.buildCBT(5, 3, 6, 2, 4, null, 7);
         exec(653, "findTarget", root, 9, root, 28);
