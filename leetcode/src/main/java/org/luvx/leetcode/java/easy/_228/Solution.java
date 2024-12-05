@@ -24,7 +24,7 @@ class Solution {
             while (j < nums.length - 1 && nums[j + 1] - nums[j] == 1) {
                 j++;
             }
-            String s = j > i ? STR."\{nums[i]}->\{nums[j]}" : String.valueOf(nums[i]);
+            String s = j > i ? nums[i] + "->" + nums[j] : String.valueOf(nums[i]);
             r.add(s);
             i = j + 1;
         }

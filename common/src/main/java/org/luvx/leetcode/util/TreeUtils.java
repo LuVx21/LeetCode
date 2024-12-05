@@ -140,17 +140,17 @@ public class TreeUtils {
             for (int j = 0; j < vals.size(); j++) {
                 Integer v = vals.get(j);
                 int k = start + step * j;
-                row[k] = v == null ? space : String.format(STR."%\{width}d", v);
+                row[k] = v == null ? space : String.format("%" + width + "d", v);
             }
             // if (i == 0) {
             //     String[] r = new String[length];
             //     for (int j = 0; j < r.length; j++) {
-            //         r[j] = String.format(STR."%\{width}d", j);
+            //         r[j] = String.format("%" + width + "d", j);
             //     }
-            //     System.out.println(STR."层id|\{String.join("", r)}");
+            //     System.out.println("层id|" + String.join("", r));
             // }
-            // System.out.println(STR."No.\{i}|\{String.join("", row)}".trim());
-            sb.append(STR."No.\{i}|\{String.join("", row)}".trim()).append("\n\n");
+            // System.out.println(("No." + i + "|" + String.join("", row)).trim());
+            sb.append(("No." + i + "|" + String.join("", row)).trim()).append("\n\n");
         }
         return sb;
     }

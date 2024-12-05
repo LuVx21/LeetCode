@@ -12,7 +12,7 @@ abstract class BaseTest {
         String className = sample.formatted(level(), id);
         MoreRuns.run(className, methodName, args).stream()
                 .map(JSON::toJSONString)
-                .map(s -> STR."\{id}: \{s}")
+                .map(s -> id + ": " + s)
                 .forEachOrdered(System.out::println);
     }
 
