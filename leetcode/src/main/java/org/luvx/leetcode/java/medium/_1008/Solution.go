@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	. "foobar/common/src/main/golang"
+	. "foobar/common/src/main/golang/tree"
 )
 
 /*

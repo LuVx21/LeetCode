@@ -1,15 +1,9 @@
-package common
+package tree
 
 import (
 	"math"
 	"strings"
 )
-
-// ListNode 链表
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
 
 // TreeNode 二叉树
 type TreeNode struct {

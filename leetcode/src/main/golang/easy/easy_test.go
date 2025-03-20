@@ -3,7 +3,7 @@ package easy
 import (
 	"cmp"
 	"fmt"
-	common "foobar/common/src/main/golang"
+	"foobar/common/src/main/golang/tree"
 	"testing"
 
 	"github.com/emirpasic/gods/v2/lists/arraylist"
@@ -31,12 +31,15 @@ func Test_oo(t *testing.T) {
 }
 
 func Test_222(t *testing.T) {
-	root := common.NewCBT(1, 2, 3, 4, 5, 6)
-	root1 := common.NewCBT()
+	root := tree.NewCBT(1, 2, 3, 4, 5, 6)
+	root1 := tree.NewCBT()
 	fmt.Println(countNodes(root))
 	fmt.Println(countNodes(root1))
+
+	fmt.Println(countNodes1(root))
+	fmt.Println(countNodes1(root1))
 }
 
 func Test_278(t *testing.T) {
-	fmt.Println(firstBadVersion(0))
+	fmt.Println(firstBadVersion(5))
 }

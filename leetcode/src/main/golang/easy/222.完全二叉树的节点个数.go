@@ -1,7 +1,7 @@
 package easy
 
 import (
-	. "foobar/common/src/main/golang"
+	. "foobar/common/src/main/golang/tree"
 )
 
 /*
