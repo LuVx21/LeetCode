@@ -77,7 +77,8 @@ type Node struct {
 func NewCBT(arr ...int) *TreeNode {
 	_len := len(arr)
 	if _len == 0 {
-		panic("不能使用空数组构建二叉树")
+		// panic("不能使用空数组构建二叉树")
+		return nil
 	}
 	if _len == 1 {
 		return &TreeNode{Val: arr[0]}
