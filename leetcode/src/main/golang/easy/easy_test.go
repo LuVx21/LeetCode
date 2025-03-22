@@ -43,3 +43,9 @@ func Test_222(t *testing.T) {
 func Test_278(t *testing.T) {
 	fmt.Println(firstBadVersion(5))
 }
+
+func Test_744(t *testing.T) {
+	// r := nextGreatestLetter([]byte{'c', 'f', 'j'}, 'a')
+	r := nextGreatestLetter([]byte{'x', 'x', 'y', 'y'}, 'z')
+	fmt.Println(string(r))
+}
