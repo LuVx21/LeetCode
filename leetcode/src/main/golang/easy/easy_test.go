@@ -3,7 +3,9 @@ package easy
 import (
 	"cmp"
 	"fmt"
-	"foobar/common/src/main/golang/tree"
+
+	"github.com/luvx21/coding-go/coding-common/tree"
+
 	"testing"
 
 	"github.com/emirpasic/gods/v2/lists/arraylist"
@@ -32,7 +34,7 @@ func Test_oo(t *testing.T) {
 
 func Test_222(t *testing.T) {
 	root := tree.NewCBT(1, 2, 3, 4, 5, 6)
-	root1 := tree.NewCBT()
+	root1 := tree.NewCBT[int]()
 	fmt.Println(countNodes(root))
 	fmt.Println(countNodes(root1))
 
