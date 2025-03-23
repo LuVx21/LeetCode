@@ -3,10 +3,10 @@ package easy
 import (
 	"cmp"
 	"fmt"
-
-	"github.com/luvx21/coding-go/coding-common/tree"
-
 	"testing"
+
+	"github.com/luvx21/coding-go/coding-common/reflects"
+	"github.com/luvx21/coding-go/coding-common/tree"
 
 	"github.com/emirpasic/gods/v2/lists/arraylist"
 )
@@ -43,11 +43,20 @@ func Test_222(t *testing.T) {
 }
 
 func Test_278(t *testing.T) {
-	fmt.Println(firstBadVersion(5))
+	reflects.CallFunc(firstBadVersion, 5)
 }
 
 func Test_744(t *testing.T) {
 	// r := nextGreatestLetter([]byte{'c', 'f', 'j'}, 'a')
 	r := nextGreatestLetter([]byte{'x', 'x', 'y', 'y'}, 'z')
 	fmt.Println(string(r))
+}
+
+func Test_796(t *testing.T) {
+	reflects.CallFunc(rotateString, "abcde", "cdeab",
+		"abcde", "abced",
+		"defdefdefabcabc", "defdefabcabcdef",
+		"bbbacddceeb", "ceebbbbacdd",
+	)
+	// fmt.Println(rotateString("abcde", "abced"))
 }
