@@ -246,6 +246,12 @@ class EasyTest extends BaseTest {
     }
 
     @Test
+    void m896() {
+        int[][] array = {{1, 2, 3, 4, 5}, {6, 5, 4, 4}, {1, 3, 2}, {1, 1, 1, 1, 1}};
+        exec(896, "isMonotonic", array);
+    }
+
+    @Test
     void m938() {
         TreeNode root = TreeUtils.buildCBT(10, 5, 15, 3, 7, null, 18);
         TreeNode root1 = TreeUtils.buildCBT(10, 5, 15, 3, 7, 13, 18, 1, null, 6);
